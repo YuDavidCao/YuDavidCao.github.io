@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { WriteCleanFlutterCodeWithExtensionMethods as WriteCleanFlutterCodeWithExtensionMethodsPage } from "../../components/pages/blogs/write-clean-flutter-code-with-extension-methods";
+import { SEO } from "astro-seo";
+---
+
+<Layout>
+  <SEO
+    title="Write clean Flutter code with extension methods"
+    description="Learn how to write clean Flutter code using Dart extension methods. This article explains how to add new methods to existing classes, provides practical examples like date-only extraction and string capitalization, and encourages creating your own extensions for cleaner, more maintainable code."
+    openGraph={{
+      basic: {
+        title: "Write clean Flutter code with extension methods",
+        type: "website",
+        image: "/write-clean-flutter-code-with-extension-methods/hero.png",
+      },
+    }}
+    extend={{
+      link: [{ rel: "icon", href: "/favicon.ico" }],
+      meta: [
+        {
+          name: "twitter:image",
+          content: "/write-clean-flutter-code-with-extension-methods/hero.png",
+        },
+        {
+          name: "twitter:title",
+          content: "Write clean Flutter code with extension methods",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Learn how to write clean Flutter code using Dart extension methods. This article explains how to add new methods to existing classes, provides practical examples like date-only extraction and string capitalization, and encourages creating your own extensions for cleaner, more maintainable code.",
+        },
+      ],
+    }}
+  />
+  <WriteCleanFlutterCodeWithExtensionMethodsPage client:only="react" />
+</Layout>

@@ -1,0 +1,33 @@
+---
+import { BlogsHome } from "../components/pages/blog";
+import Layout from "../layouts/Layout.astro";
+import { SEO } from "astro-seo";
+---
+
+<Layout>
+  <head>
+    <SEO
+      title="David Cao's Blogs"
+      description="A list of David Cao's blogs"
+      openGraph={{
+        basic: {
+          title: "David Cao's Blogs",
+          type: "website",
+          image: "/profile.png",
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content: "/profile.png",
+          },
+          { name: "twitter:title", content: "David Cao's Blogs" },
+          { name: "twitter:description", content: "A list of David Cao's blogs" },
+        ],
+      }}
+    />
+  </head>
+  <BlogsHome client:load />
+</Layout>

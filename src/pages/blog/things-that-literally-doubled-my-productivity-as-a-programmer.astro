@@ -1,0 +1,44 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { ThingsThatLiterallyDoubledMyProductivityAsAProgrammer as ThingsThatLiterallyDoubledMyProductivityAsAProgrammerPage } from "../../components/pages/blogs/things-that-literally-doubled-my-productivity-as-a-programmer";
+import { SEO } from "astro-seo";
+---
+
+<Layout>
+  <SEO
+    title="Things that literally doubled my productivity as a programmer"
+    description="Discover practical productivity tips and tools that can significantly boost your programming efficiency, from keyboard shortcuts to automation techniques."
+    openGraph={{
+      basic: {
+        title: "Things that literally doubled my productivity as a programmer",
+        type: "website",
+        image:
+          "/things-that-literally-doubled-my-productivity-as-a-programmer/hero.png",
+      },
+    }}
+    extend={{
+      link: [{ rel: "icon", href: "/favicon.ico" }],
+      meta: [
+        {
+          name: "twitter:image",
+          content:
+            "/things-that-literally-doubled-my-productivity-as-a-programmer/hero.png",
+        },
+        {
+          name: "twitter:title",
+          content:
+            "Things that literally doubled my productivity as a programmer",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Discover practical productivity tips and tools that can significantly boost your programming efficiency, from keyboard shortcuts to automation techniques.",
+        },
+      ],
+    }}
+  />
+  <ThingsThatLiterallyDoubledMyProductivityAsAProgrammerPage
+    client:only="react"
+  />
+</Layout>

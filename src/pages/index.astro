@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import { HomePage } from "../components/pages/home";
+import { SEO } from "astro-seo";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <head>
+    <SEO
+      title="David Cao's Personal Website"
+      description="David Cao's personal website, including projects, blogs, and contacts"
+      openGraph={{
+        basic: {
+          title: "David Cao's Personal Website",
+          type: "website",
+          image: "/profile.png",
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content: "/profile.png",
+          },
+          { name: "twitter:title", content: "David Cao's Personal Website" },
+          {
+            name: "twitter:description",
+            content:
+              "David Cao's personal website, including projects, blogs, and contacts",
+          },
+        ],
+      }}
+    />
+  </head>
+  <HomePage />
+</Layout>

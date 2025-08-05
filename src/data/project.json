@@ -1,0 +1,69 @@
+{
+  "projects": [
+    {
+      "title": "Compact - All-In-One Organizer",
+      "description": "A simplicity-driven app that provides users an encompassing experience of productivity, featuring customizable widgets like To-Do, Budgeting, Addictions, Diary, and more.",
+      "image": "/compact.png",
+      "tags": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "React"
+      ],
+      "actions": [
+        {
+          "label": "View Website",
+          "url": "https://compact-web.web.app/"
+        },
+        {
+          "label": "Download IOS",
+          "url": "https://apps.apple.com/us/app/compact-all-in-one-organizer/id6502299932"
+        },
+        {
+          "label": "Download Android (Outdated)",
+          "url": "https://play.google.com/store/apps/details?id=com.myapp.compact"
+        }
+      ]
+    },
+    {
+      "title": "LinearPlot3D",
+      "description": "LinearPlot3D is a web application that displays animation to help students understand the concept of linear algebra in 3D space and professors to teach the concept of linear algebra in 3D space.",
+      "image": "/linearplot3d.png",
+      "tags": [
+        "React",
+        "Typescript",
+        "Web"
+      ],
+      "actions": [
+        {
+          "label": "View Website",
+          "url": "https://linearplot3d.web.app/"
+        },
+        {
+          "label": "View Source",
+          "url": "https://github.com/Project-Code-UVA/LinearPlot3D/tree/main"
+        }
+      ]
+    },
+    {
+      "title": "ClipboardHistory",
+      "description": "The app keeps track of textual clipboard history data and allows the user to copy previous clipboard data using ctrl + <number>",
+      "image": "/clipboardhistory.png",
+      "tags": [
+        "Swift",
+        "SwiftUI",
+        "MacOS"
+      ],
+      "actions": [
+        {
+          "label": "Download App (MacOS)",
+          "url": "https://apps.apple.com/us/app/clipboard-history/id6740091912?mt=12"
+        },
+        {
+          "label": "View Source",
+          "url": "https://github.com/YuDavidCao/clipboard_history"
+        }
+      ]
+    }
+  ]
+}

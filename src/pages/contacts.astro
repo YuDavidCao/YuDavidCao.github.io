@@ -1,0 +1,33 @@
+---
+import { ContactsPage } from "../components/pages/contact";
+import Layout from "../layouts/Layout.astro";
+import { SEO } from "astro-seo";
+---
+
+<Layout>
+  <head>
+    <SEO
+      title="David Cao's Contact"
+      description="Contact David Cao"
+      openGraph={{
+        basic: {
+          title: "David Cao's Contact",
+          type: "website",
+          image: "/profile.png",
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content: "/profile.png",
+          },
+          { name: "twitter:title", content: "David Cao's Contact" },
+          { name: "twitter:description", content: "Contact David Cao" },
+        ],
+      }}
+    />
+  </head>
+  <ContactsPage client:load />
+</Layout>

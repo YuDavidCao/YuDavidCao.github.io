@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { CanonicalUrlSharingOnMobileBrowsersAndAWorkaroundForStaticSites as CanonicalUrlSharingOnMobileBrowsersAndAWorkaroundForStaticSitesPage } from "../../components/pages/blogs/canonical-url-sharing-on-mobile-browsers-and-a-workaround-for-static-sites";
+import { SEO } from "astro-seo";
+---
+
+<Layout>
+  <SEO
+    title="Canonical URL sharing on mobile browsers and a workaround for static sites"
+    description="Why mobile browsers share canonical URLs, the pros and cons, and a workaround for static sites to preserve user context when sharing links."
+    openGraph={{
+      basic: {
+        title:
+          "Canonical URL sharing on mobile browsers and a workaround for static sites",
+        type: "website",
+        image:
+          "/canonical-url-sharing-on-mobile-browsers-and-a-workaround-for-static-sites/hero.png",
+      },
+    }}
+    extend={{
+      link: [{ rel: "icon", href: "/favicon.ico" }],
+      meta: [
+        {
+          name: "twitter:image",
+          content:
+            "/blog/canonical-url-sharing-on-mobile-browsers-and-a-workaround-for-static-sites/hero.png",
+        },
+        {
+          name: "twitter:title",
+          content:
+            "Canonical URL sharing on mobile browsers and a workaround for static sites",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Why mobile browsers share canonical URLs, the pros and cons, and a workaround for static sites to preserve user context when sharing links.",
+        },
+      ],
+    }}
+  />
+  <CanonicalUrlSharingOnMobileBrowsersAndAWorkaroundForStaticSitesPage
+    client:only="react"
+  />
+</Layout>
