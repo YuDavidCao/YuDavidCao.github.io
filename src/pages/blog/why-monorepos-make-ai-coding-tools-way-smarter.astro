@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { WhyMonoreposMakeAiCodingToolsWaySmarter as WhyMonoreposMakeAiCodingToolsWaySmarterPage } from "../../components/pages/blogs/why-monorepos-make-ai-coding-tools-way-smarter";
+import { SEO } from "astro-seo";
+---
+
+<Layout>
+  <SEO
+    title="Why Monorepos Make AI Coding Tools Way Smarter"
+    description="Discover how monorepos enhance AI coding tools by providing full context across your entire codebase, leading to better suggestions and more effective development."
+    openGraph={{
+      basic: {
+        title: "Why Monorepos Make AI Coding Tools Way Smarter",
+        type: "website",
+        image: "/why-monorepos-make-ai-coding-tools-way-smarter/hero.png",
+      },
+    }}
+    extend={{
+      link: [{ rel: "icon", href: "/icon.png" }],
+      meta: [
+        {
+          name: "twitter:image",
+          content: "/why-monorepos-make-ai-coding-tools-way-smarter/hero.png",
+        },
+        {
+          name: "twitter:title",
+          content: "Why Monorepos Make AI Coding Tools Way Smarter",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Discover how monorepos enhance AI coding tools by providing full context across your entire codebase, leading to better suggestions and more effective development.",
+        },
+      ],
+    }}
+  />
+  <WhyMonoreposMakeAiCodingToolsWaySmarterPage client:only="react" />
+</Layout>
