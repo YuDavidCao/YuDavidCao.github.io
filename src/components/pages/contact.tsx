@@ -3,6 +3,7 @@ import { FaMedium } from "react-icons/fa6";
 import { BiLogoLinkedin } from "react-icons/bi";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { FadeIn } from "../effects/FadeIn";
 
 export function ContactsPage() {
   const [loading, setLoading] = useState(false);
@@ -35,109 +36,132 @@ export function ContactsPage() {
         () => {
           setLoading(false);
           alert("Thank you. I will get back to you as soon as possible.");
-
           form.reset();
-          setLoading(false);
         },
         (error) => {
           setLoading(false);
-          console.error(error);
-
           alert("Ahh, something went wrong. Please try again.");
-          setLoading(false);
         }
       );
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center py-[100px] text-tx-primary dark:text-dark-tx-primary min-h-screen">
-      <h1 className="text-3xl font-bold mb-10 dark:text-dark-tx-primary text-tx-primary">
-        Contact Me
-      </h1>
-      <div className="w-3/5 flex flex-col gap-4 text-xl items-center justify-center text-center dark:text-dark-tx-secondary text-tx-secondary">
-        <p>
-          I'm always open to discussing new projects, creative ideas, or
-          opportunities to be part of your visions. Feel free to reach out
-          through the form below or connect with me on social media.
+    <div className="w-full flex flex-col items-center justify-center py-24 px-6 min-h-screen">
+      <FadeIn direction="up">
+        <p className="text-ink-muted dark:text-dark-ink-muted text-sm uppercase tracking-[0.2em] mb-4 font-mono text-center">
+          Get in Touch
         </p>
+      </FadeIn>
+
+      <FadeIn direction="up" delay={0.1}>
+        <h1 className="font-serif text-3xl md:text-4xl font-semibold text-ink dark:text-dark-ink mb-4 text-center">
+          Correspondence
+        </h1>
+      </FadeIn>
+
+      <FadeIn direction="up" delay={0.2}>
+        <div className="vintage-divider mb-8 w-48">
+          <span className="flourish">✉</span>
+        </div>
+      </FadeIn>
+
+      <FadeIn direction="up" delay={0.3}>
+        <p className="max-w-xl text-center text-ink-faded dark:text-dark-ink-faded font-body mb-10">
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities. Feel free to reach out through the form below or
+          connect with me on social media.
+        </p>
+      </FadeIn>
+
+      <FadeIn direction="up" delay={0.4} className="w-full max-w-md">
         <form
-          className="flex flex-col w-[300px] sm:w-[360px] md:w[480px] lg:w-[600px] items-center justify-center gap-4 m-10"
+          className="flex flex-col gap-4 mb-12"
           onSubmit={handleSubmit}
         >
-          <label className="flex flex-col flex-1 w-full">
-            <input
-              placeholder="Your Name"
-              className="form-input w-full rounded-lg bg-primary border border-tertiary text-tx-primary placeholder-tx-tertiary h-14 p-4 text-base font-normal focus:outline-none focus:ring-0 focus:border-tertiary dark:bg-dark-primary dark:border-dark-tertiary dark:text-dark-tx-primary dark:placeholder-dark-tx-tertiary"
-              name="name"
-            />
-          </label>
-          <label className="flex flex-col flex-1 w-full">
-            <input
-              placeholder="Your Email"
-              className="form-input w-full rounded-lg bg-primary border border-tertiary text-tx-primary placeholder-tx-tertiary h-14 p-4 text-base font-normal focus:outline-none focus:ring-0 focus:border-tertiary dark:bg-dark-primary dark:border-dark-tertiary dark:text-dark-tx-primary dark:placeholder-dark-tx-tertiary"
-              name="email"
-            />
-          </label>
-          <label className="flex flex-col flex-1 w-full">
-            <textarea
-              placeholder="Your Message"
-              className="form-input w-full rounded-lg bg-primary border border-tertiary text-tx-primary placeholder-tx-tertiary min-h-36 p-4 text-base font-normal focus:outline-none focus:ring-0 focus:border-tertiary resize-none dark:bg-dark-primary dark:border-dark-tertiary dark:text-dark-tx-primary dark:placeholder-dark-tx-tertiary"
-              name="message"
-            ></textarea>
-          </label>
+          <input
+            placeholder="Your Name"
+            className="w-full rounded-sm bg-paper-light dark:bg-dark-paper-light border border-paper-dark dark:border-dark-paper-elevated text-ink dark:text-dark-ink placeholder-ink-muted dark:placeholder-dark-ink-muted h-12 px-4 text-sm font-body transition-all duration-200 focus:border-sepia dark:focus:border-dark-sepia focus:outline-none"
+            name="name"
+            required
+          />
+          <input
+            placeholder="Your Email"
+            type="email"
+            className="w-full rounded-sm bg-paper-light dark:bg-dark-paper-light border border-paper-dark dark:border-dark-paper-elevated text-ink dark:text-dark-ink placeholder-ink-muted dark:placeholder-dark-ink-muted h-12 px-4 text-sm font-body transition-all duration-200 focus:border-sepia dark:focus:border-dark-sepia focus:outline-none"
+            name="email"
+            required
+          />
+          <textarea
+            placeholder="Your Message"
+            className="w-full rounded-sm bg-paper-light dark:bg-dark-paper-light border border-paper-dark dark:border-dark-paper-elevated text-ink dark:text-dark-ink placeholder-ink-muted dark:placeholder-dark-ink-muted min-h-36 p-4 text-sm font-body transition-all duration-200 focus:border-sepia dark:focus:border-dark-sepia focus:outline-none resize-none"
+            name="message"
+            required
+          ></textarea>
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-secondary text-tx-primary px-4 pt-3 pb-2 rounded-lg hover:bg-tertiary transition-colors text-sm font-bold dark:bg-dark-bg dark:text-dark-bg-tx-primary dark:hover:bg-dark-bg-hover"
+            className="btn-vintage text-ink dark:text-dark-ink w-full disabled:opacity-50"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
-        <h2 className="text-2xl font-bold dark:text-dark-tx-primary text-tx-primary">
-          Connect with me on social media
-        </h2>
-        <div className="flex gap-4 items-center justify-center">
-          <div
-            className="flex flex-col items-center justify-center gap-2 hover:text-tx-secondary transition-colors cursor-pointer dark:hover:text-dark-tx-tertiary"
-            onClick={() =>
-              window.open("https://github.com/YuDavidCao", "_blank")
-            }
+      </FadeIn>
+
+      <FadeIn direction="up" delay={0.5}>
+        <div className="vintage-divider mb-8 w-32">
+          <span className="text-ink-muted dark:text-dark-ink-muted text-xs">or</span>
+        </div>
+      </FadeIn>
+
+      <FadeIn direction="up" delay={0.6}>
+        <p className="text-sm text-ink-faded dark:text-dark-ink-faded uppercase tracking-wider mb-6 font-mono">
+          Connect on Social Media
+        </p>
+      </FadeIn>
+
+      <FadeIn direction="up" delay={0.7}>
+        <div className="flex gap-8 items-center justify-center">
+          <a
+            href="https://github.com/YuDavidCao"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 group"
           >
-            <div className="bg-secondary rounded-full p-4 m-2 dark:bg-dark-secondary">
-              <FaGithub className="w-6 h-6 dark:text-dark-tx-primary text-tx-primary" />
+            <div className="p-4 border border-paper-dark dark:border-dark-paper-elevated rounded-full transition-all duration-300 group-hover:border-sepia dark:group-hover:border-dark-sepia group-hover:bg-paper-dark dark:group-hover:bg-dark-paper-elevated">
+              <FaGithub className="w-5 h-5 text-ink-faded dark:text-dark-ink-faded group-hover:text-sepia dark:group-hover:text-dark-sepia transition-colors" />
             </div>
-            <span className="text-sm dark:text-dark-tx-primary text-tx-primary">
-              Github
+            <span className="text-xs font-mono text-ink-muted dark:text-dark-ink-muted uppercase tracking-wider">
+              GitHub
             </span>
-          </div>
-          <div
-            className="flex flex-col items-center justify-center gap-2 hover:text-tx-secondary transition-colors cursor-pointer dark:hover:text-dark-tx-tertiary"
-            onClick={() =>
-              window.open("https://www.linkedin.com/in/yu-david-cao/", "_blank")
-            }
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yu-david-cao/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 group"
           >
-            <div className="bg-secondary rounded-full p-4 m-2 dark:bg-dark-secondary">
-              <BiLogoLinkedin className="w-6 h-6 dark:text-dark-tx-primary text-tx-primary" />
+            <div className="p-4 border border-paper-dark dark:border-dark-paper-elevated rounded-full transition-all duration-300 group-hover:border-sepia dark:group-hover:border-dark-sepia group-hover:bg-paper-dark dark:group-hover:bg-dark-paper-elevated">
+              <BiLogoLinkedin className="w-5 h-5 text-ink-faded dark:text-dark-ink-faded group-hover:text-sepia dark:group-hover:text-dark-sepia transition-colors" />
             </div>
-            <span className="text-sm dark:text-dark-tx-primary text-tx-primary">
+            <span className="text-xs font-mono text-ink-muted dark:text-dark-ink-muted uppercase tracking-wider">
               LinkedIn
             </span>
-          </div>
-          <div
-            className="flex flex-col items-center justify-center gap-2 hover:text-tx-secondary transition-colors cursor-pointer dark:hover:text-dark-tx-tertiary"
-            onClick={() =>
-              window.open("https://medium.com/@yu.cao20041208", "_blank")
-            }
+          </a>
+          <a
+            href="https://medium.com/@yu.cao20041208"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 group"
           >
-            <div className="bg-secondary rounded-full p-4 m-2 dark:bg-dark-secondary">
-              <FaMedium className="w-6 h-6 dark:text-dark-tx-primary text-tx-primary" />
+            <div className="p-4 border border-paper-dark dark:border-dark-paper-elevated rounded-full transition-all duration-300 group-hover:border-sepia dark:group-hover:border-dark-sepia group-hover:bg-paper-dark dark:group-hover:bg-dark-paper-elevated">
+              <FaMedium className="w-5 h-5 text-ink-faded dark:text-dark-ink-faded group-hover:text-sepia dark:group-hover:text-dark-sepia transition-colors" />
             </div>
-            <span className="text-sm dark:text-dark-tx-primary text-tx-primary">
+            <span className="text-xs font-mono text-ink-muted dark:text-dark-ink-muted uppercase tracking-wider">
               Medium
             </span>
-          </div>
+          </a>
         </div>
-      </div>
+      </FadeIn>
     </div>
   );
 }

@@ -8,7 +8,7 @@ export interface IMyButtonProps {
 export function MyButton({ children, onClick }: IMyButtonProps) {
   return (
     <button
-      className="bg-secondary text-tx-primary px-4 pt-3 pb-2 rounded-lg hover:bg-tertiary transition-colors text-sm font-bold dark:bg-dark-bg dark:text-dark-bg-tx-primary dark:hover:bg-dark-bg-hover"
+      className="btn-vintage text-ink dark:text-dark-ink text-sm"
       onClick={onClick}
     >
       {children}

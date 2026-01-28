@@ -7,8 +7,16 @@ import { Footer } from "../components/footer";
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/icon.png" />
-    <script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
       (function () {
         try {
           var theme = localStorage.getItem("theme");
@@ -23,13 +31,15 @@ import { Footer } from "../components/footer";
           }
         } catch (e) {}
       })();
-    </script></head
-  >
+    </script>
+  </head>
 
-  <body class="flex flex-col min-h-screen bg-white dark:bg-dark-primary">
+  <body
+    class="flex flex-col min-h-screen bg-paper dark:bg-dark-paper text-ink dark:text-dark-ink transition-colors duration-300 paper-texture"
+  >
     <NavBar client:load />
     <main
-      class="flex-1 w-full flex flex-col items-center justify-center py-[100px] text-tx-primary dark:text-dark-tx-primary"
+      class="flex-1 w-full flex flex-col items-center justify-center"
     >
       <slot />
     </main>

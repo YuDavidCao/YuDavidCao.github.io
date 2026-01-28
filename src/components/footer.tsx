@@ -1,15 +1,21 @@
 export function Footer() {
   return (
-    <footer className="w-full flex justify-center py-4 mt-auto text-tx-primary dark:text-dark-tx-primary text-sm [box-shadow:0_-4px_16px_0_rgba(0,0,0,0.08)] dark:[box-shadow:0_-4px_16px_0_rgba(0,0,0,0.32)]">
-      <span className="mr-2">&#169; {new Date().getFullYear()} Yu Cao</span>
-      <a
-        href="https://github.com/YuDavidCao"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="ml-2 underline hover:text-accent dark:hover:text-accent"
-      >
-        GitHub
-      </a>
+    <footer className="w-full flex flex-col items-center py-8 mt-auto border-t border-paper-dark dark:border-dark-paper-elevated">
+      <div className="vintage-divider mb-4 w-24">
+        <span className="flourish text-sm">✦</span>
+      </div>
+      <div className="flex items-center gap-4 text-sm text-ink-faded dark:text-dark-ink-faded font-body">
+        <span>© {new Date().getFullYear()} David Cao</span>
+        <span className="text-ink-muted dark:text-dark-ink-muted">·</span>
+        <a
+          href="https://github.com/YuDavidCao"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-vintage"
+        >
+          GitHub
+        </a>
+      </div>
     </footer>
   );
 }

@@ -16,34 +16,45 @@ export function ProjectCard({
   children,
 }: IProjectCardProps) {
   return (
-    <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 md:flex-row flex-col">
-      <div className="items-center self-start">
-        <h3 className="text-xl font-bold mb-2 md:text-left text-center">
-          {title}
-        </h3>
-        <p className="text-tx-secondary dark:text-dark-tx-secondary md:text-left text-center text-sm">
-          {description}
-        </p>
-        <div className="flex flex-wrap gap-2 my-2 justify-center md:justify-start">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs font-medium border border-gray-300 dark:bg-dark-bg dark:text-dark-bg-tx-primary dark:hover:bg-dark-bg-hover transition-colors"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div className="flex flex-wrap gap-2 my-2 justify-center md:justify-start">
-          {children}
+    <article className="w-full max-w-3xl mx-auto group">
+      <div className="card-vintage rounded-sm p-6 md:p-8">
+        <div className="flex flex-col md:flex-row gap-6">
+          {/* Content */}
+          <div className="flex-1">
+            <h3 className="font-serif text-xl md:text-2xl font-semibold text-ink dark:text-dark-ink mb-3">
+              {title}
+            </h3>
+
+            <p className="text-ink-faded dark:text-dark-ink-faded text-sm leading-relaxed mb-4 font-body">
+              {description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-6">
+              {tags.map((tag) => (
+                <span key={tag} className="tag-vintage text-xs">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {children}
+            </div>
+          </div>
+
+          {/* Image */}
+          <div className="md:w-72 flex-shrink-0">
+            <div className="overflow-hidden rounded-sm border border-paper-dark dark:border-dark-paper-elevated">
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-44 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <img
-        src={image}
-        alt={title}
-        className="lg:w-[350px] lg:h-[200px] w-[250px] h-[150px] rounded-lg self-center drop-shadow-xl"
-        loading="lazy"
-      />
-    </div>
+    </article>
   );
 }
