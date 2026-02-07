@@ -81,8 +81,10 @@ export function HomePage() {
                 "React",
                 "TypeScript",
                 "Flutter",
-                "Prisma",
+                "Next.js",
+                "Django",
                 "TailwindCSS",
+                "Prisma",
               ].map((tech) => (
                 <span key={tech} className="tag-vintage">
                   {tech}
@@ -94,7 +96,7 @@ export function HomePage() {
 
         <FadeIn direction="up" delay={0.7}>
           <p className="text-ink-faded dark:text-dark-ink-faded mb-10 italic font-body">
-            Also experienced with Next.js, Django, Flask, Firebase, MongoDB, and TensorFlow.
+            Also experienced with Python, Flask, Firebase, AWS, Supabase, MongoDB, TensorFlow, Docker, and Figma.
           </p>
         </FadeIn>
 
