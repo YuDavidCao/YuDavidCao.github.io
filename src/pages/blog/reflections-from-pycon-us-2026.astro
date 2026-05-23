@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { ReflectionsFromPyconUs2026 as ReflectionsFromPyconUs2026Page } from "../../components/pages/blogs/reflections-from-pycon-us-2026";
+import { SEO } from "astro-seo";
+---
+
+<Layout>
+  <SEO
+    title="Reflections from PyCon US 2026"
+    description="Reflections from my first PyCon US — volunteering, GPU tiling, AI economics, Python's generational garbage collector, Pablo Galindo's 'cathedral' keynote, and the 'Silence is Gold' lightning talk."
+    openGraph={{
+      basic: {
+        title: "Reflections from PyCon US 2026",
+        type: "website",
+        image: "/reflections-from-pycon-us-2026/hero.png",
+      },
+    }}
+    extend={{
+      link: [{ rel: "icon", href: "/icon.png" }],
+      meta: [
+        {
+          name: "twitter:image",
+          content: "/reflections-from-pycon-us-2026/hero.png",
+        },
+        {
+          name: "twitter:title",
+          content: "Reflections from PyCon US 2026",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Reflections from my first PyCon US — volunteering, GPU tiling, AI economics, Python's generational garbage collector, Pablo Galindo's 'cathedral' keynote, and the 'Silence is Gold' lightning talk.",
+        },
+      ],
+    }}
+  />
+  <ReflectionsFromPyconUs2026Page client:only="react" />
+</Layout>
