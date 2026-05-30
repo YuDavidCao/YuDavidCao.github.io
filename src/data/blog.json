@@ -1,6 +1,20 @@
 {
   "blogs": [
     {
+      "route": "hopcrofts-algorithm-efficient-dfa-minimization",
+      "title": "Hopcroft's Algorithm: Efficient DFA Minimization",
+      "content": "Deterministic Finite Automata (DFAs) are fundamental computational models used in compilers, lexical analyzers, and pattern matching. As DFAs grow, they may contain redundant equivalent states that can be merged without changing the recognized language — this is DFA minimization. A naive pairwise comparison runs in quadratic time; Hopcroft's Algorithm solves the problem efficiently through partition refinement. States are initially split into accepting and non-accepting groups, then repeatedly refined using splitters from a worklist. For each splitter and input symbol, the algorithm finds states that transition into the splitter and splits any partition containing a mix of such states. A worked example reduces a six-state DFA to three states. The implementation uses reverse transition maps for efficient predecessor lookups and always adds the smaller half of a split to the worklist — the key optimization behind O(n·s·log n) complexity. Full Python code is included. Smaller DFAs use less memory and run faster in lexical analyzers and compilers, making Hopcroft's Algorithm the standard approach for DFA minimization.",
+      "summary": "A walkthrough of Hopcroft's Algorithm for DFA minimization — partition refinement, a step-by-step six-state example, full Python implementation, and O(n·s·log n) complexity analysis. A final project for UVA's Advanced Data Structures and Algorithms class.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/hopcrofts-algorithm-efficient-dfa-minimization-fabbaf5fe975",
+      "tags": [
+        "Algorithms",
+        "Computer Science",
+        "Technical"
+      ],
+      "date": "2026-05-30T00:00:00-05:00",
+      "image": "/hopcrofts-algorithm-efficient-dfa-minimization/4.png"
+    },
+    {
       "route": "reflections-from-pycon-us-2026",
       "title": "Reflections from PyCon US 2026",
       "content": "I attended PyCon US 2026 last week, and as my first ever conference, it definitely set a high. Beyond the talks themselves, one of the best parts was simply meeting people — developers, maintainers, students, educators, and engineers from all kinds of backgrounds. The atmosphere felt incredibly welcoming, and I had a lot of fun throughout the conference. Below are some concrete takeaways: Volunteering at PyCon was one of the most meaningful experiences — welcoming attendees at the registration desk made me feel more connected to the event as a whole. NVIDIA's session on GPU tiling was eye-opening: breaking workloads into smaller tiled computations to maximize memory locality and GPU efficiency, showing how Python increasingly acts as the interface layer to extremely high-performance systems. Discussions around AI economics highlighted that current token pricing is heavily subsidized by capital, which could renew focus on optimization, smaller models, local inference, and caching. A talk on Python's generational garbage collector revealed an elegant idea: most objects die young, so Python organizes them into generations and scans older objects less frequently. Pablo Galindo Salgado's keynote referenced Javier Pascual's 'cathedral' metaphor — open source is built from small contributions that together form a massive software ecosystem. The keynote also touched on the impact of AI-generated PRs on OSS maintainers — AI lowers the barrier to generating code, but maintainership still requires responsibility, understanding, and care. A lightning talk introduced 'Silence is Gold' alongside the 'Pac-Man Rule' — pausing before speaking creates an opening for others to contribute. PyCon reminded me that Python is much bigger than just a programming language — it's a community, an ecosystem, and a collective effort built over decades.",
