@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "common-problems-with-vibe-coding-and-how-to-avoid-them",
+      "title": "Common Problems with Vibe Coding (and How to Avoid Them)",
+      "content": "AI-assisted development through tools like Claude Code, Cursor, and GitHub Copilot has dramatically accelerated application building. However, this approach — termed 'vibe coding' — introduces manageable challenges that developers should recognize and address systematically. Seven key problems and solutions: (1) Duplicated code — AI prioritizes immediate functionality over architecture; fix by requesting dedicated refactoring passes. (2) Security vulnerabilities — AI may miss authorization checks or input validation; use multi-layered review with tools like CodeRabbit. (3) Generic AI-looking frontends — predictable gradients and purple themes from training data patterns; provide specific design constraints and visual references. (4) Missing domain knowledge — AI lacks project-specific context; write comprehensive CLAUDE.md or Agent.md files. (5) Incomplete large refactors — AI may miss related tests or config files; use verification prompts and global search. (6) Missing cross-codebase context — isolated folders starve AI of context; initialize from project root or use monorepos. (7) Rapidly evolving ecosystem — follow a few trusted sources and prioritize hands-on experimentation over trend-chasing. The conclusion: vibe coding is not magic. These are workflow problems with workflow solutions. The most productive developers guide, review, and structure AI output rather than passively accepting first results.",
+      "summary": "Seven common problems with AI-assisted 'vibe coding' — from duplicated code and security gaps to generic frontends and missing context — with practical workflow solutions for each. These aren't fundamental AI limitations; they're fixable with the right habits.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/common-problems-with-vibe-coding-and-how-to-avoid-them-a7e93cc5ead9",
+      "tags": [
+        "AI",
+        "Software Engineering",
+        "Productivity",
+        "Non-technical"
+      ],
+      "date": "2026-06-06T00:00:00-05:00",
+      "image": "/common-problems-with-vibe-coding-and-how-to-avoid-them/hero.png"
+    },
+    {
       "route": "hopcrofts-algorithm-efficient-dfa-minimization",
       "title": "Hopcroft's Algorithm: Efficient DFA Minimization",
       "content": "Deterministic Finite Automata (DFAs) are fundamental computational models used in compilers, lexical analyzers, and pattern matching. As DFAs grow, they may contain redundant equivalent states that can be merged without changing the recognized language — this is DFA minimization. A naive pairwise comparison runs in quadratic time; Hopcroft's Algorithm solves the problem efficiently through partition refinement. States are initially split into accepting and non-accepting groups, then repeatedly refined using splitters from a worklist. For each splitter and input symbol, the algorithm finds states that transition into the splitter and splits any partition containing a mix of such states. A worked example reduces a six-state DFA to three states. The implementation uses reverse transition maps for efficient predecessor lookups and always adds the smaller half of a split to the worklist — the key optimization behind O(n·s·log n) complexity. Full Python code is included. Smaller DFAs use less memory and run faster in lexical analyzers and compilers, making Hopcroft's Algorithm the standard approach for DFA minimization.",
