@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "using-the-broadcastchannel-api-for-cross-tab-communication",
+      "title": "Using the BroadcastChannel API for Cross-Tab Communication",
+      "content": "Modern web applications often run in multiple browser tabs simultaneously, and those tabs sometimes need to communicate — for example, logging out in one tab should log out all others. The BroadcastChannel API provides a simple way for browser tabs, windows, iframes, and workers of the same origin to exchange messages entirely within the browser. Common use cases include synchronizing logout/login events, updating authentication state, refreshing cached data, syncing settings or theme changes, coordinating actions between tabs, and preventing duplicate background work. A practical example: create a shared channel with new BroadcastChannel('auth'), listen for logout messages via onmessage, and broadcast logout with postMessage when the user logs out. Alternatives include localStorage storage events (indirect but widely supported), Shared Workers (more complex, limited support), and Service Workers (powerful but often overkill). BroadcastChannel is generally the cleanest solution because it is purpose-built for messaging, requires no storage writes, delivers messages immediately, and works across tabs, windows, iframes, and workers of the same origin.",
+      "summary": "The BroadcastChannel API lets browser tabs, windows, iframes, and workers on the same origin exchange messages without a server. This post covers common use cases, a logout synchronization example, and how it compares to localStorage events, Shared Workers, and Service Workers.",
+      "readMoreUrl": "https://medium.com/p/d048c1107dd3",
+      "tags": [
+        "Web",
+        "Javascript",
+        "Frontend",
+        "Technical"
+      ],
+      "date": "2026-06-11T00:00:00-05:00",
+      "image": "/using-the-broadcastchannel-api-for-cross-tab-communication/hero.png"
+    },
+    {
       "route": "common-problems-with-vibe-coding-and-how-to-avoid-them",
       "title": "Common Problems with Vibe Coding (and How to Avoid Them)",
       "content": "AI-assisted development through tools like Claude Code, Cursor, and GitHub Copilot has dramatically accelerated application building. However, this approach — termed 'vibe coding' — introduces manageable challenges that developers should recognize and address systematically. Seven key problems and solutions: (1) Duplicated code — AI prioritizes immediate functionality over architecture; fix by requesting dedicated refactoring passes. (2) Security vulnerabilities — AI may miss authorization checks or input validation; use multi-layered review with tools like CodeRabbit. (3) Generic AI-looking frontends — predictable gradients and purple themes from training data patterns; provide specific design constraints and visual references. (4) Missing domain knowledge — AI lacks project-specific context; write comprehensive CLAUDE.md or Agent.md files. (5) Incomplete large refactors — AI may miss related tests or config files; use verification prompts and global search. (6) Missing cross-codebase context — isolated folders starve AI of context; initialize from project root or use monorepos. (7) Rapidly evolving ecosystem — follow a few trusted sources and prioritize hands-on experimentation over trend-chasing. The conclusion: vibe coding is not magic. These are workflow problems with workflow solutions. The most productive developers guide, review, and structure AI output rather than passively accepting first results.",

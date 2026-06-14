@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { UsingTheBroadcastChannelApiForCrossTabCommunication } from "../../components/pages/blogs/using-the-broadcastchannel-api-for-cross-tab-communication";
+import { SEO } from "astro-seo";
+---
+
+<Layout>
+  <SEO
+    title="Using the BroadcastChannel API for Cross-Tab Communication"
+    description="Learn how the BroadcastChannel API enables lightweight messaging between browser tabs, windows, iframes, and workers — with a practical logout synchronization example."
+    openGraph={{
+      basic: {
+        title: "Using the BroadcastChannel API for Cross-Tab Communication",
+        type: "website",
+        image: "/using-the-broadcastchannel-api-for-cross-tab-communication/hero.png",
+      },
+    }}
+    extend={{
+      link: [{ rel: "icon", href: "/icon.png" }],
+      meta: [
+        {
+          name: "twitter:image",
+          content: "/using-the-broadcastchannel-api-for-cross-tab-communication/hero.png",
+        },
+        {
+          name: "twitter:title",
+          content: "Using the BroadcastChannel API for Cross-Tab Communication",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Learn how the BroadcastChannel API enables lightweight messaging between browser tabs, windows, iframes, and workers — with a practical logout synchronization example.",
+        },
+      ],
+    }}
+  />
+  <UsingTheBroadcastChannelApiForCrossTabCommunication client:only="react" />
+</Layout>
