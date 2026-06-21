@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "understanding-side-effect-imports-in-javascript",
+      "title": "Understanding Side-Effect Imports in JavaScript",
+      "content": "JavaScript modules are often thought of as containers for functions, classes, and constants that we explicitly import and use. However, there is another pattern that appears frequently in real-world applications: side-effect imports like import './analytics.js'. A side-effect import imports a module solely for the code that runs when the module is evaluated — even if the module exports nothing. The idea parallels pure vs impure functions: pure modules mainly export values without changing global state, while impure modules perform actions during initialization such as setting window.appVersion or patching fetch. Common real-world uses include polyfills (import 'core-js/stable'), analytics initialization, and global configuration. Drawbacks include hidden behavior, order dependencies, harder testing due to global state leaks, and reduced maintainability. As a rule of thumb, prefer explicit exports and function calls when possible, and reserve side-effect imports for one-time initialization tasks at application startup.",
+      "summary": "Side-effect imports run a module's top-level code without binding any exports — useful for polyfills, analytics, and startup configuration, but they hide behavior and introduce ordering concerns. This post explains the pattern with examples and when to use it carefully.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/understanding-side-effect-imports-in-javascript-d49f413a1f89",
+      "tags": [
+        "Javascript",
+        "Software Engineering",
+        "Frontend",
+        "Technical"
+      ],
+      "date": "2026-06-21T00:00:00-05:00",
+      "image": "/understanding-side-effect-imports-in-javascript/hero.webp"
+    },
+    {
       "route": "using-the-broadcastchannel-api-for-cross-tab-communication",
       "title": "Using the BroadcastChannel API for Cross-Tab Communication",
       "content": "Modern web applications often run in multiple browser tabs simultaneously, and those tabs sometimes need to communicate — for example, logging out in one tab should log out all others. The BroadcastChannel API provides a simple way for browser tabs, windows, iframes, and workers of the same origin to exchange messages entirely within the browser. Common use cases include synchronizing logout/login events, updating authentication state, refreshing cached data, syncing settings or theme changes, coordinating actions between tabs, and preventing duplicate background work. A practical example: create a shared channel with new BroadcastChannel('auth'), listen for logout messages via onmessage, and broadcast logout with postMessage when the user logs out. Alternatives include localStorage storage events (indirect but widely supported), Shared Workers (more complex, limited support), and Service Workers (powerful but often overkill). BroadcastChannel is generally the cleanest solution because it is purpose-built for messaging, requires no storage writes, delivers messages immediately, and works across tabs, windows, iframes, and workers of the same origin.",
