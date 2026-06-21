@@ -2,6 +2,29 @@
 import "../styles/global.css";
 import { NavBar } from "../components/navbar";
 import { Footer } from "../components/footer";
+import { SITE } from "../config/site";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE.author.name,
+  url: SITE.author.url,
+  sameAs: [SITE.author.github, SITE.author.linkedin, SITE.author.medium],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.title,
+  url: SITE.url,
+  description: SITE.description,
+  inLanguage: SITE.language,
+  author: {
+    "@type": "Person",
+    name: SITE.author.name,
+    url: SITE.author.url,
+  },
+};
 ---
 
 <!doctype html>
@@ -10,6 +33,23 @@ import { Footer } from "../components/footer";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/icon.png" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${SITE.title} - Blog`}
+      href="/rss.xml"
+    />
+    <meta name="theme-color" content="#f5f0e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1814" media="(prefers-color-scheme: dark)" />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(personSchema)}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(websiteSchema)}
+    />
+    <slot name="head" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

@@ -12,7 +12,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), sitemap()],
-  site: 'https://YuDavidCao.github.io',
+  site: 'https://yudavidcao.github.io',
   base: '/',
   vite: {
     plugins: [tailwindcss()],

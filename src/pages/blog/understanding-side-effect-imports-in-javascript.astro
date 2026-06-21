@@ -2,38 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 import { UnderstandingSideEffectImportsInJavascript as UnderstandingSideEffectImportsInJavascriptPage } from "../../components/pages/blogs/understanding-side-effect-imports-in-javascript";
-import { SEO } from "astro-seo";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
 ---
 
 <Layout>
-  <SEO
-    title="Understanding Side-Effect Imports in JavaScript"
-    description="Side-effect imports run code when a module is evaluated — without importing any exports. Learn when they're useful, real-world examples like polyfills and analytics, and why to use them carefully."
-    openGraph={{
-      basic: {
-        title: "Understanding Side-Effect Imports in JavaScript",
-        type: "website",
-        image: "/understanding-side-effect-imports-in-javascript/hero.webp",
-      },
-    }}
-    extend={{
-      link: [{ rel: "icon", href: "/icon.png" }],
-      meta: [
-        {
-          name: "twitter:image",
-          content: "/understanding-side-effect-imports-in-javascript/hero.webp",
-        },
-        {
-          name: "twitter:title",
-          content: "Understanding Side-Effect Imports in JavaScript",
-        },
-        {
-          name: "twitter:description",
-          content:
-            "Side-effect imports run code when a module is evaluated — without importing any exports. Learn when they're useful, real-world examples like polyfills and analytics, and why to use them carefully.",
-        },
-      ],
-    }}
-  />
+  <BlogSEO slot="head" route="understanding-side-effect-imports-in-javascript" />
   <UnderstandingSideEffectImportsInJavascriptPage client:only="react" />
 </Layout>

@@ -2,38 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 import { HopcroftsAlgorithmEfficientDfaMinimization as HopcroftsAlgorithmEfficientDfaMinimizationPage } from "../../components/pages/blogs/hopcrofts-algorithm-efficient-dfa-minimization";
-import { SEO } from "astro-seo";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
 ---
 
 <Layout>
-  <SEO
-    title="Hopcroft's Algorithm: Efficient DFA Minimization"
-    description="An in-depth walkthrough of Hopcroft's Algorithm for DFA minimization — partition refinement, a worked example, full Python implementation, and O(n·s·log n) complexity analysis."
-    openGraph={{
-      basic: {
-        title: "Hopcroft's Algorithm: Efficient DFA Minimization",
-        type: "website",
-        image: "/hopcrofts-algorithm-efficient-dfa-minimization/4.png",
-      },
-    }}
-    extend={{
-      link: [{ rel: "icon", href: "/icon.png" }],
-      meta: [
-        {
-          name: "twitter:image",
-          content: "/hopcrofts-algorithm-efficient-dfa-minimization/4.png",
-        },
-        {
-          name: "twitter:title",
-          content: "Hopcroft's Algorithm: Efficient DFA Minimization",
-        },
-        {
-          name: "twitter:description",
-          content:
-            "An in-depth walkthrough of Hopcroft's Algorithm for DFA minimization — partition refinement, a worked example, full Python implementation, and O(n·s·log n) complexity analysis.",
-        },
-      ],
-    }}
-  />
+  <BlogSEO slot="head" route="hopcrofts-algorithm-efficient-dfa-minimization" />
   <HopcroftsAlgorithmEfficientDfaMinimizationPage client:only="react" />
 </Layout>

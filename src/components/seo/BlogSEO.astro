@@ -1,0 +1,25 @@
+---
+import SiteSEO from "./SiteSEO.astro";
+import blogData from "../../data/blog.json";
+
+interface Props {
+  route: string;
+}
+
+const { route } = Astro.props;
+const blog = blogData.blogs.find((entry) => entry.route === route);
+
+if (!blog) {
+  throw new Error(`Blog not found for route: ${route}`);
+}
+---
+
+<SiteSEO
+  title={blog.title}
+  description={blog.summary}
+  path={`/blog/${blog.route}`}
+  image={blog.image}
+  type="article"
+  publishedTime={blog.date}
+  tags={blog.tags}
+/>

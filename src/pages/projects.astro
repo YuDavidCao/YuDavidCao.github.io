@@ -1,36 +1,15 @@
 ---
 import { ProjectsPage } from "../components/pages/Projects";
 import Layout from "../layouts/Layout.astro";
-import { SEO } from "astro-seo";
+import SiteSEO from "../components/seo/SiteSEO.astro";
 ---
 
 <Layout>
-  <head>
-    <SEO
-      title="David Cao's Projects"
-      description="A list of programming projects I have worked on"
-      openGraph={{
-        basic: {
-          title: "David Cao's Projects",
-          type: "website",
-          image: "/profile.png",
-        },
-      }}
-      extend={{
-        link: [{ rel: "icon", href: "/icon.png" }],
-        meta: [
-          {
-            name: "twitter:image",
-            content: "/profile.png",
-          },
-          { name: "twitter:title", content: "David Cao's Projects" },
-          {
-            name: "twitter:description",
-            content: "A list of programming projects I have worked on",
-          },
-        ],
-      }}
-    />
-  </head>
+  <SiteSEO
+    slot="head"
+    title="David Cao's Projects"
+    description="A list of programming projects I have worked on"
+    path="/projects"
+  />
   <ProjectsPage client:load />
 </Layout>

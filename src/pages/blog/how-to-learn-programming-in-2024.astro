@@ -2,38 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 import { HowToLearnProgrammingIn2024 as HowToLearnProgrammingIn2024Page } from "../../components/pages/blogs/how-to-learn-programming-in-2024";
-import { SEO } from "astro-seo";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
 ---
 
 <Layout>
-  <SEO
-    title="How to learn programming in 2024"
-    description="A guide to learning programming in 2024, with practical tips and takeaways for developers."
-    openGraph={{
-      basic: {
-        title: "How to learn programming in 2024",
-        type: "website",
-        image: "/how-to-learn-programming-in-2024/hero.png",
-      },
-    }}
-    extend={{
-      link: [{ rel: "icon", href: "/icon.png" }],
-      meta: [
-        {
-          name: "twitter:image",
-          content: "/how-to-learn-programming-in-2024/hero.png",
-        },
-        {
-          name: "twitter:title",
-          content: "How to learn programming in 2024",
-        },
-        {
-          name: "twitter:description",
-          content:
-            "A guide to learning programming in 2024, with practical tips and takeaways for developers.",
-        },
-      ],
-    }}
-  />
+  <BlogSEO slot="head" route="how-to-learn-programming-in-2024" />
   <HowToLearnProgrammingIn2024Page client:only="react" />
 </Layout>
