@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "flutter-app-store-publishing-common-pitfalls-part-1",
+      "title": "Flutter App Store Publishing: Common Pitfalls (Part 1)",
+      "content": "Publishing a Flutter app to the App Store sounds straightforward until App Review rejects your build for something you've never considered. After being involved in 100+ Flutter app submissions, common rejection reasons include missing Info.plist permission strings like NSCameraUsageDescription and NSPhotoLibraryUsageDescription (often required by plugins even if your code never requests them), app icons containing an alpha channel (fix with remove_alpha_ios: true in flutter_launcher_icons), missing in-app Delete Account functionality for apps with user registration, special characters in Info.plist not being XML-escaped, App Store screenshots showing Flutter's debug banner, and mandatory login for features Apple believes should be accessible without an account under Guideline 5.1.1. Most rejections aren't caused by complicated bugs — they're configuration mistakes and policy requirements that are easy to miss until you've published enough apps.",
+      "summary": "After publishing 100+ Flutter apps, these are the App Store rejection reasons I see most often — missing Info.plist permissions, alpha-channel icons, in-app account deletion, XML escaping, debug banners in screenshots, and mandatory login issues.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/flutter-app-store-publishing-common-pitfalls-part-1-195e2713db2e",
+      "tags": [
+        "Flutter",
+        "Mobile",
+        "App Store",
+        "Technical"
+      ],
+      "date": "2026-06-28T00:00:00-05:00",
+      "image": "/flutter-app-store-publishing-common-pitfalls-part-1/hero.png"
+    },
+    {
       "route": "understanding-side-effect-imports-in-javascript",
       "title": "Understanding Side-Effect Imports in JavaScript",
       "content": "JavaScript modules are often thought of as containers for functions, classes, and constants that we explicitly import and use. However, there is another pattern that appears frequently in real-world applications: side-effect imports like import './analytics.js'. A side-effect import imports a module solely for the code that runs when the module is evaluated — even if the module exports nothing. The idea parallels pure vs impure functions: pure modules mainly export values without changing global state, while impure modules perform actions during initialization such as setting window.appVersion or patching fetch. Common real-world uses include polyfills (import 'core-js/stable'), analytics initialization, and global configuration. Drawbacks include hidden behavior, order dependencies, harder testing due to global state leaks, and reduced maintainability. As a rule of thumb, prefer explicit exports and function calls when possible, and reserve side-effect imports for one-time initialization tasks at application startup.",

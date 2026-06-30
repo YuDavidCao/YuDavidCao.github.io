@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { FlutterAppStorePublishingCommonPitfallsPart1 as FlutterAppStorePublishingCommonPitfallsPart1Page } from "../../components/pages/blogs/flutter-app-store-publishing-common-pitfalls-part-1";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="flutter-app-store-publishing-common-pitfalls-part-1" />
+  <FlutterAppStorePublishingCommonPitfallsPart1Page client:only="react" />
+</Layout>
