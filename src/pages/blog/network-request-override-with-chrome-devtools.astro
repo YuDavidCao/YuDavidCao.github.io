@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { NetworkRequestOverrideWithChromeDevtools as NetworkRequestOverrideWithChromeDevtoolsPage } from "../../components/pages/blogs/network-request-override-with-chrome-devtools";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="network-request-override-with-chrome-devtools" />
+  <NetworkRequestOverrideWithChromeDevtoolsPage client:only="react" />
+</Layout>

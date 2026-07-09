@@ -1,6 +1,20 @@
 {
   "blogs": [
     {
+      "route": "network-request-override-with-chrome-devtools",
+      "title": "Network Request Override with Chrome DevTools",
+      "content": "If you've ever wished you could change an API response without touching your backend, spinning up a mock server, or editing your frontend code, Chrome DevTools has a feature you'll probably love. Buried inside the Network panel are Override Content and Override Headers — two options that let you intercept individual network requests and replace their responses directly from your browser. This is especially valuable on large projects where frontend and backend live in separate repos, backend services are owned by different teams, spinning up the backend locally is slow or impossible, and you may not even have permission to modify the backend. Override Content creates a local copy of a response that you can edit freely — from HTML to JSON — then refresh the page to see your frontend receive the modified data. Override Headers lets you modify HTTP response headers like CORS, cache behavior, CSP, and content types without changing the server. Overrides are local to your machine, can be toggled on and off, show a purple indicator on overridden requests, and display a warning in the Network tab when active. For frontend developers working in large service-oriented codebases, network overrides can save dozens of minutes every day by eliminating the friction of backend changes, mock servers, and temporary test code.",
+      "summary": "Chrome DevTools' Override Content and Override Headers let you intercept network requests and replace responses locally — a game changer for frontend development, especially on large projects where backend changes are slow or impossible.",
+      "readMoreUrl": "https://medium.com/p/4fad776fc2ca",
+      "tags": [
+        "Frontend",
+        "Web",
+        "Technical"
+      ],
+      "date": "2026-07-07T00:00:00-05:00",
+      "image": "/network-request-override-with-chrome-devtools/hero.png"
+    },
+    {
       "route": "flutter-app-store-publishing-common-pitfalls-part-1",
       "title": "Flutter App Store Publishing: Common Pitfalls (Part 1)",
       "content": "Publishing a Flutter app to the App Store sounds straightforward until App Review rejects your build for something you've never considered. After being involved in 100+ Flutter app submissions, common rejection reasons include missing Info.plist permission strings like NSCameraUsageDescription and NSPhotoLibraryUsageDescription (often required by plugins even if your code never requests them), app icons containing an alpha channel (fix with remove_alpha_ios: true in flutter_launcher_icons), missing in-app Delete Account functionality for apps with user registration, special characters in Info.plist not being XML-escaped, App Store screenshots showing Flutter's debug banner, and mandatory login for features Apple believes should be accessible without an account under Guideline 5.1.1. Most rejections aren't caused by complicated bugs — they're configuration mistakes and policy requirements that are easy to miss until you've published enough apps.",
