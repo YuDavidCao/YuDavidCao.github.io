@@ -4,7 +4,9 @@ import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
 
 const heroImg =
-  "/turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source/hero.png";
+  "/turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source/hero.jpeg";
+const remoteLoginImg =
+  "/turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source/img1.png";
 
 export function TurnYourIphoneIntoARemoteTerminalForYourMacCompletelyFreeAndOpenSource() {
   return (
@@ -86,6 +88,12 @@ export function TurnYourIphoneIntoARemoteTerminalForYourMacCompletelyFreeAndOpen
             You need to enable Remote Login (SSH) in macOS System Settings →
             General → Sharing before any of this works.
           </p>
+          <img
+            src={remoteLoginImg}
+            alt="macOS System Settings showing Remote Login enabled under Sharing"
+            className="w-full object-cover rounded-lg mb-6 shadow dark:shadow-gray-800"
+            loading="lazy"
+          />
 
           <h2 className="font-serif text-3xl font-bold mt-10 mb-4 tracking-tight">
             The Three Components
