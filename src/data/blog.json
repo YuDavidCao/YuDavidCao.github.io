@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source",
+      "title": "Turn Your iPhone into a Remote Terminal for Your Mac — Completely Free and Open Source",
+      "content": "With just three free tools — a-Shell, Tailscale, and tmux — you can SSH into your MacBook from your iPhone anywhere in the world, close the app whenever you want, and pick up exactly where you left off hours later. a-Shell provides a Unix-like shell with an SSH client on iOS. Tailscale gives your Mac and iPhone stable private IP addresses so SSH works even when your home Wi-Fi changes or you're on LTE. tmux keeps terminal sessions alive through app switches, phone locks, and dropped connections. After enabling Remote Login on macOS, the workflow is simple: ssh into your Mac over Tailscale, attach to a tmux session, work normally, and reconnect later with the same commands. You can even auto-attach tmux on SSH login by adding a small snippet to your ~/.zshrc.",
+      "summary": "SSH into your MacBook from your iPhone anywhere in the world using a-Shell, Tailscale, and tmux — a completely free, open-source setup that keeps terminal sessions alive across disconnects.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source-8a656f45e1be",
+      "tags": [
+        "iOS",
+        "Mac",
+        "Productivity",
+        "Technical"
+      ],
+      "date": "2026-07-11T00:00:00-05:00",
+      "image": "/turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source/hero.png"
+    },
+    {
       "route": "network-request-override-with-chrome-devtools",
       "title": "Network Request Override with Chrome DevTools",
       "content": "If you've ever wished you could change an API response without touching your backend, spinning up a mock server, or editing your frontend code, Chrome DevTools has a feature you'll probably love. Buried inside the Network panel are Override Content and Override Headers — two options that let you intercept individual network requests and replace their responses directly from your browser. This is especially valuable on large projects where frontend and backend live in separate repos, backend services are owned by different teams, spinning up the backend locally is slow or impossible, and you may not even have permission to modify the backend. Override Content creates a local copy of a response that you can edit freely — from HTML to JSON — then refresh the page to see your frontend receive the modified data. Override Headers lets you modify HTTP response headers like CORS, cache behavior, CSP, and content types without changing the server. Overrides are local to your machine, can be toggled on and off, show a purple indicator on overridden requests, and display a warning in the Network tab when active. For frontend developers working in large service-oriented codebases, network overrides can save dozens of minutes every day by eliminating the friction of backend changes, mock servers, and temporary test code.",

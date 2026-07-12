@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { TurnYourIphoneIntoARemoteTerminalForYourMacCompletelyFreeAndOpenSource as TurnYourIphoneIntoARemoteTerminalForYourMacCompletelyFreeAndOpenSourcePage } from "../../components/pages/blogs/turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source" />
+  <TurnYourIphoneIntoARemoteTerminalForYourMacCompletelyFreeAndOpenSourcePage client:only="react" />
+</Layout>
