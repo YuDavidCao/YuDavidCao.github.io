@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "using-github-copilot-cli-in-github-actions-ci",
+      "title": "Using GitHub Copilot CLI in GitHub Actions CI",
+      "content": "Traditional CI excels at deterministic checks — compile, test, lint, static analysis — but many engineering questions are harder to express as rules. GitHub Copilot CLI can run programmatically inside GitHub Actions, letting you invoke it as an AI-powered CI step. This article walks through practical examples: AI security review on pull requests, checking whether a PR satisfies GitHub issue requirements, and catching missing documentation updates after API changes. It compares traditional CI (source code → rules → pass/fail) with Copilot-powered CI (source code → natural language instructions → AI agent → analysis → pass/fail/report). Pros include natural-language CI rules, repository context, easy customization, and enforcement of project-specific conventions. Cons include security risks from prompt injection (especially on fork PRs), non-deterministic results, false positives/negatives, and cost/execution time. The recommended pattern is a three-layer architecture: deterministic checks as hard gates, AI analysis as additional signal, and human review for final judgment — with reports in GitHub Actions job summaries rather than immediately failing CI.",
+      "summary": "How to run GitHub Copilot CLI inside GitHub Actions for AI-powered CI checks — security review, requirements validation, and documentation checks — plus the pros, cons, and a recommended three-layer architecture.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/using-github-copilot-cli-in-github-actions-ci-7875a2385a0d",
+      "tags": [
+        "AI",
+        "DevOps",
+        "Software Engineering",
+        "Technical"
+      ],
+      "date": "2026-07-21T00:00:00-05:00",
+      "image": "/using-github-copilot-cli-in-github-actions-ci/hero.png"
+    },
+    {
       "route": "turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source",
       "title": "Turn Your iPhone into a Remote Terminal for Your Mac — Completely Free and Open Source",
       "content": "With just three free tools — a-Shell, Tailscale, and tmux — you can SSH into your MacBook from your iPhone anywhere in the world, close the app whenever you want, and pick up exactly where you left off hours later. a-Shell provides a Unix-like shell with an SSH client on iOS. Tailscale gives your Mac and iPhone stable private IP addresses so SSH works even when your home Wi-Fi changes or you're on LTE. tmux keeps terminal sessions alive through app switches, phone locks, and dropped connections. After enabling Remote Login on macOS, the workflow is simple: ssh into your Mac over Tailscale, attach to a tmux session, work normally, and reconnect later with the same commands. You can even auto-attach tmux on SSH login by adding a small snippet to your ~/.zshrc.",
