@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { UsingGithubCopilotCliInGithubActionsCi as UsingGithubCopilotCliInGithubActionsCiPage } from "../../components/pages/blogs/using-github-copilot-cli-in-github-actions-ci";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="using-github-copilot-cli-in-github-actions-ci" />
+  <UsingGithubCopilotCliInGithubActionsCiPage client:only="react" />
+</Layout>
