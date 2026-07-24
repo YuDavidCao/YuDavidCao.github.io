@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { ExploreChromeIncognitoModeFromAStorageCookieCachingPerspective as ExploreChromeIncognitoModeFromAStorageCookieCachingPerspectivePage } from "../../components/pages/blogs/explore-chrome-incognito-mode-from-a-storage-cookie-caching-perspective";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="explore-chrome-incognito-mode-from-a-storage-cookie-caching-perspective" />
+  <ExploreChromeIncognitoModeFromAStorageCookieCachingPerspectivePage client:only="react" />
+</Layout>

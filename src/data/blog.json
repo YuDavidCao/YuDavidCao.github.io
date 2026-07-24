@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "explore-chrome-incognito-mode-from-a-storage-cookie-caching-perspective",
+      "title": "Explore Chrome Incognito Mode from a storage & cookie & caching perspective",
+      "content": "Incognito mode is often thought of as an empty browser session, but that is not quite right. Chrome's incognito mode has its own temporary browser state — tabs and windows within an incognito session can share cookies, storage, service workers, Cache API entries, and HTTP cache entries. That state is isolated from the normal Chrome profile and disappears when the last incognito window closes. The key distinction is session isolation, not zero caching. A local test suite across 11 scenarios probes Web Storage, HttpOnly cookies, sessionStorage, IndexedDB, OPFS, service workers, Cache API, and HTTP-cached responses across normal tabs, incognito tabs and windows, reloads, browser restarts, and session boundaries. Normal tabs share persistent state; incognito tabs and windows share temporary state; sessionStorage remains per-tab; normal and incognito contexts do not share storage or HTTP cache; closing the last incognito window clears incognito state; and a hard reload bypasses HTTP cache without clearing site storage. The useful mental model: incognito is a separate temporary browser profile, not a browser with caching disabled.",
+      "summary": "Incognito mode is session isolation, not zero caching. A test suite across 11 scenarios reveals how Chrome shares cookies, storage, and HTTP cache within incognito sessions — and clears them when the last window closes.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/explore-chrome-incognito-mode-from-a-storage-cookie-caching-perspective-19ba0941e216",
+      "tags": [
+        "Chrome",
+        "Web",
+        "Frontend",
+        "Technical"
+      ],
+      "date": "2026-07-23T00:00:00-05:00",
+      "image": "/explore-chrome-incognito-mode-from-a-storage-cookie-caching-perspective/hero.png"
+    },
+    {
       "route": "using-github-copilot-cli-in-github-actions-ci",
       "title": "Using GitHub Copilot CLI in GitHub Actions CI",
       "content": "Traditional CI excels at deterministic checks — compile, test, lint, static analysis — but many engineering questions are harder to express as rules. GitHub Copilot CLI can run programmatically inside GitHub Actions, letting you invoke it as an AI-powered CI step. This article walks through practical examples: AI security review on pull requests, checking whether a PR satisfies GitHub issue requirements, and catching missing documentation updates after API changes. It compares traditional CI (source code → rules → pass/fail) with Copilot-powered CI (source code → natural language instructions → AI agent → analysis → pass/fail/report). Pros include natural-language CI rules, repository context, easy customization, and enforcement of project-specific conventions. Cons include security risks from prompt injection (especially on fork PRs), non-deterministic results, false positives/negatives, and cost/execution time. The recommended pattern is a three-layer architecture: deterministic checks as hard gates, AI analysis as additional signal, and human review for final judgment — with reports in GitHub Actions job summaries rather than immediately failing CI.",
