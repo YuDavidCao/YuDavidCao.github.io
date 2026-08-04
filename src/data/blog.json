@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "create-an-unused-function-detection-script-using-the-typescript-compiler-and-lsp-api",
+      "title": "Create an Unused Function Detection Script Using the TypeScript Compiler and LSP API",
+      "content": "Every TypeScript project accumulates functions that nobody calls anymore. Tools like knip detect unused files, but not unused functions inside a file. This post walks through an ~80-line script that finds unused function candidates by combining the TypeScript compiler's AST with getReferencesAtPosition from the Language Service — the same in-process API that tsserver and every LSP plugin wraps. The script loads TypeScript from the target project's node_modules, parses tsconfig.json, implements a minimal Language Service host, walks the AST for named function declarations (including arrow functions and methods, skipping decorated handlers), and reports functions with fewer than two references. The core heuristic: one reference means only the definition site exists; two or more means something else references it. Output is pipe-friendly file:line name format. Caveats include entry points, dynamic imports, exported API surface, and overloads. Full code is available on GitHub.",
+      "summary": "An ~80-line script that finds unused TypeScript function candidates using the compiler AST and getReferencesAtPosition from the Language Service API — the same engine behind Find All References in your editor.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/create-an-unused-function-detection-script-using-the-typescript-compiler-and-lsp-api-f5768a4475cb",
+      "tags": [
+        "TypeScript",
+        "Frontend",
+        "Software Engineering",
+        "Technical"
+      ],
+      "date": "2026-08-02T00:00:00-05:00",
+      "image": "/create-an-unused-function-detection-script-using-the-typescript-compiler-and-lsp-api/hero.png"
+    },
+    {
       "route": "explore-chrome-incognito-mode-from-a-storage-cookie-caching-perspective",
       "title": "Explore Chrome Incognito Mode from a storage & cookie & caching perspective",
       "content": "Incognito mode is often thought of as an empty browser session, but that is not quite right. Chrome's incognito mode has its own temporary browser state — tabs and windows within an incognito session can share cookies, storage, service workers, Cache API entries, and HTTP cache entries. That state is isolated from the normal Chrome profile and disappears when the last incognito window closes. The key distinction is session isolation, not zero caching. A local test suite across 11 scenarios probes Web Storage, HttpOnly cookies, sessionStorage, IndexedDB, OPFS, service workers, Cache API, and HTTP-cached responses across normal tabs, incognito tabs and windows, reloads, browser restarts, and session boundaries. Normal tabs share persistent state; incognito tabs and windows share temporary state; sessionStorage remains per-tab; normal and incognito contexts do not share storage or HTTP cache; closing the last incognito window clears incognito state; and a hard reload bypasses HTTP cache without clearing site storage. The useful mental model: incognito is a separate temporary browser profile, not a browser with caching disabled.",

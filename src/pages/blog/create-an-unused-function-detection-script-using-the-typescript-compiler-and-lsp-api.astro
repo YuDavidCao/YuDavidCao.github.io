@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { CreateAnUnusedFunctionDetectionScriptUsingTheTypescriptCompilerAndLspApi as CreateAnUnusedFunctionDetectionScriptUsingTheTypescriptCompilerAndLspApiPage } from "../../components/pages/blogs/create-an-unused-function-detection-script-using-the-typescript-compiler-and-lsp-api";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="create-an-unused-function-detection-script-using-the-typescript-compiler-and-lsp-api" />
+  <CreateAnUnusedFunctionDetectionScriptUsingTheTypescriptCompilerAndLspApiPage client:only="react" />
+</Layout>
