@@ -1,7 +1,21 @@
 ---
-import { BlogsHome } from "../components/pages/blog";
 import Layout from "../layouts/Layout.astro";
 import SiteSEO from "../components/seo/SiteSEO.astro";
+import BlogCard from "../components/blogs/BlogCard.astro";
+import blogData from "../data/blog.json";
+
+const sortedBlogs = [...blogData.blogs].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+const tagCounts = new Map<string, number>();
+for (const blog of blogData.blogs) {
+  for (const tag of blog.tags) {
+    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+  }
+}
+
+const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]);
 ---
 
 <Layout>
@@ -11,5 +25,167 @@ import SiteSEO from "../components/seo/SiteSEO.astro";
     description="A list of David Cao's blogs"
     path="/blogs"
   />
-  <BlogsHome client:load />
+
+  <div class="w-full flex flex-col items-center py-24 px-6 min-h-screen">
+    <p
+      class="text-ink-muted dark:text-dark-ink-muted text-sm uppercase tracking-[0.2em] mb-4 font-mono text-center"
+    >
+      Writings
+    </p>
+
+    <h1
+      class="font-serif text-3xl md:text-4xl font-semibold text-ink dark:text-dark-ink mb-4 text-center"
+    >
+      The Journal
+    </h1>
+
+    <div class="vintage-divider mb-8 w-48">
+      <span class="flourish">❦</span>
+    </div>
+
+    <p
+      class="text-center mb-8 text-ink-faded dark:text-dark-ink-faded max-w-xl font-body"
+    >
+      Thoughts on programming, technology, and lessons learned along the way.
+    </p>
+
+    <div class="w-full max-w-3xl flex flex-col gap-4 mb-12">
+      <div class="relative">
+        <svg
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-ink-muted dark:text-dark-ink-muted"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input
+          id="blog-search"
+          type="search"
+          placeholder="Search articles..."
+          class="w-full rounded-sm bg-paper-light dark:bg-dark-paper-light border border-paper-dark dark:border-dark-paper-elevated text-ink dark:text-dark-ink placeholder-ink-muted dark:placeholder-dark-ink-muted h-12 pl-12 pr-4 text-sm font-body transition-all duration-200 focus:border-sepia dark:focus:border-dark-sepia"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="flex flex-wrap gap-2" id="blog-tags">
+        {
+          sortedTags.map(([tag, count]) => (
+            <button
+              type="button"
+              data-tag-filter={tag}
+              data-tag-count={count}
+              class="blog-tag-btn px-3 py-1.5 text-xs font-mono uppercase tracking-wider border transition-all duration-200 bg-transparent text-ink-faded dark:text-dark-ink-faded border-ink-muted/30 dark:border-dark-ink-muted/30 hover:border-sepia dark:hover:border-dark-sepia"
+            >
+              <span class="tag-check hidden" aria-hidden="true">✓ </span>
+              {`${tag} (${count})`}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div
+      id="blog-list"
+      class="w-full flex flex-col items-center gap-6"
+    >
+      {
+        sortedBlogs.map((blog, index) => (
+          <BlogCard blog={blog} index={index} />
+        ))
+      }
+    </div>
+
+    <p
+      id="blog-empty"
+      class="hidden text-center py-12 text-ink-faded dark:text-dark-ink-faded text-lg font-body italic"
+    >
+      No articles found matching your criteria.
+    </p>
+  </div>
 </Layout>
+
+<script>
+  function initBlogFilter() {
+    const searchInput = document.getElementById(
+      "blog-search"
+    ) as HTMLInputElement | null;
+    const tagButtons = document.querySelectorAll<HTMLButtonElement>(
+      "[data-tag-filter]"
+    );
+    const cards = document.querySelectorAll<HTMLElement>("[data-blog-card]");
+    const emptyState = document.getElementById("blog-empty");
+
+    if (!searchInput || cards.length === 0) return;
+
+    const selectedTags = new Set<string>();
+    let searchString = "";
+
+    function setTagSelected(button: HTMLButtonElement, selected: boolean) {
+      const check = button.querySelector(".tag-check");
+      check?.classList.toggle("hidden", !selected);
+
+      button.classList.toggle("bg-sepia", selected);
+      button.classList.toggle("dark:bg-dark-sepia", selected);
+      button.classList.toggle("text-paper", selected);
+      button.classList.toggle("dark:text-dark-paper", selected);
+      button.classList.toggle("border-sepia", selected);
+      button.classList.toggle("dark:border-dark-sepia", selected);
+
+      button.classList.toggle("bg-transparent", !selected);
+      button.classList.toggle("text-ink-faded", !selected);
+      button.classList.toggle("dark:text-dark-ink-faded", !selected);
+      button.classList.toggle("border-ink-muted/30", !selected);
+      button.classList.toggle("dark:border-dark-ink-muted/30", !selected);
+    }
+
+    function applyFilter() {
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const searchText = card.dataset.search ?? "";
+        const tags = (card.dataset.tags ?? "").split(",");
+        const matchesSearch =
+          !searchString || searchText.includes(searchString);
+        const matchesTags =
+          selectedTags.size === 0 ||
+          tags.some((tag) => selectedTags.has(tag));
+        const visible = matchesSearch && matchesTags;
+
+        card.classList.toggle("hidden", !visible);
+        if (visible) visibleCount++;
+      });
+
+      emptyState?.classList.toggle("hidden", visibleCount > 0);
+    }
+
+    searchInput.addEventListener("input", () => {
+      searchString = searchInput.value.toLowerCase();
+      applyFilter();
+    });
+
+    tagButtons.forEach((button) => {
+      const tag = button.dataset.tagFilter;
+      if (!tag) return;
+
+      button.addEventListener("click", () => {
+        if (selectedTags.has(tag)) {
+          selectedTags.delete(tag);
+          setTagSelected(button, false);
+        } else {
+          selectedTags.add(tag);
+          setTagSelected(button, true);
+        }
+        applyFilter();
+      });
+    });
+  }
+
+  initBlogFilter();
+  document.addEventListener("astro:page-load", initBlogFilter);
+</script>

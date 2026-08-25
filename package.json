@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "generate-thumbnails": "node scripts/generate-blog-thumbnails.mjs",
+    "prebuild": "npm run generate-thumbnails",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -29,5 +31,8 @@
     "tailwindcss": "^4.1.11",
     "three": "^0.182.0",
     "typewriter-effect": "^2.22.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
   }
 }
