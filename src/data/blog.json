@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "you-can-animate-page-navigation",
+      "title": "You Can Animate Page Navigation",
+      "content": "I've built plenty of React apps with client-side routing — click a link, the URL changes, a new component renders. Fast, fine, forgettable. What I didn't realize until recently: that swap doesn't have to feel like a hard cut. Page navigation can be animated with the View Transitions API — the old view sliding out while the new one slides in, a tab underline gliding to its new spot, the whole thing reading like a native app changing screens. The browser takes snapshots of the old and new UI, animates between them, and React can unmount immediately — no AnimatePresence, no delayed unmounts. In practice, you add viewTransition to NavLink, set viewTransitionName on the main outlet, and write a few lines of CSS for ::view-transition-old and ::view-transition-new. React Router's viewTransition prop requires a data router (createBrowserRouter). Directional slides, shared element morphs, and cross-fades become straightforward. It degrades gracefully in unsupported browsers and should respect prefers-reduced-motion. For tabbed layouts, settings panels, and onboarding flows, this is the first thing to try before reaching for a full animation library.",
+      "summary": "Page navigation in React SPAs doesn't have to be an instant hard cut. The View Transitions API lets the browser animate between route snapshots with a few lines of CSS — no animation library required.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/you-can-animate-page-navigation-ff9cbe9c6d3b",
+      "tags": [
+        "Frontend",
+        "React",
+        "Web",
+        "Technical"
+      ],
+      "date": "2026-08-12T00:00:00-05:00",
+      "image": "/you-can-animate-page-navigation/hero.png"
+    },
+    {
       "route": "create-an-unused-function-detection-script-using-the-typescript-compiler-and-lsp-api",
       "title": "Create an Unused Function Detection Script Using the TypeScript Compiler and LSP API",
       "content": "Every TypeScript project accumulates functions that nobody calls anymore. Tools like knip detect unused files, but not unused functions inside a file. This post walks through an ~80-line script that finds unused function candidates by combining the TypeScript compiler's AST with getReferencesAtPosition from the Language Service — the same in-process API that tsserver and every LSP plugin wraps. The script loads TypeScript from the target project's node_modules, parses tsconfig.json, implements a minimal Language Service host, walks the AST for named function declarations (including arrow functions and methods, skipping decorated handlers), and reports functions with fewer than two references. The core heuristic: one reference means only the definition site exists; two or more means something else references it. Output is pipe-friendly file:line name format. Caveats include entry points, dynamic imports, exported API surface, and overloads. Full code is available on GitHub.",

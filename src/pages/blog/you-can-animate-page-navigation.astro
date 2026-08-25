@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { YouCanAnimatePageNavigation as YouCanAnimatePageNavigationPage } from "../../components/pages/blogs/you-can-animate-page-navigation";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="you-can-animate-page-navigation" />
+  <YouCanAnimatePageNavigationPage client:only="react" />
+</Layout>
