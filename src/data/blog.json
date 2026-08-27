@@ -1,6 +1,22 @@
 {
   "blogs": [
     {
+      "route": "a-practical-approch-in-maintaining-and-reducing-tech-debt-for-enterprise-javascript-typescript",
+      "title": "A Practical Approch in Maintaining and Reducing Tech Debt for Enterprise JavaScript/TypeScript Applications",
+      "content": "Tech debt is inevitable in large software projects — the real problem is when it accumulates faster than the team can understand or remove it. This article describes a practical maintenance approach for enterprise JavaScript/TypeScript codebases: continuously identify things that can be deleted, automate the easy parts, and use LLMs for architecture-level reasoning. The pipeline starts with Knip for unused files and dependencies (treating it as a candidate generator, not an oracle), feeds Knip output to an LLM for false-positive filtering, and puts Knip in CI with explicit ignore configuration and a 2-week to 3-month grace period for newly unused items. For function-level dead code, combine Knip with TypeScript Language Service reference analysis. For interconnected dead subsystems that reference each other, use scoped LLM audits (e.g. Ponytail's ponytail-audit skill) on architectural domains rather than entire 500k-line repositories. Additional practices include DRY-opportunity prompts, biasing AI agents toward reuse, logical folder structure as LLM optimization, preventing unfinished features from becoming permanent, and Prettier/linting via Husky pre-commit hooks. The key distinction is detection vs. judgment: build a system that says 'these 47 things are suspicious, here is why' — then let humans and LLMs investigate.",
+      "summary": "A practical pipeline for reducing tech debt in enterprise JS/TS codebases: Knip for mechanical detection, TypeScript LSP for function-level analysis, CI automation with grace periods, and scoped LLM audits for architectural dead code — with detection and judgment kept separate.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/a-practical-approch-in-maintaining-and-reducing-tech-debt-for-enterprise-javascript-typescript-f4f771b5f554",
+      "tags": [
+        "TypeScript",
+        "Javascript",
+        "Software Engineering",
+        "AI",
+        "Technical"
+      ],
+      "date": "2026-08-27T00:00:00-05:00",
+      "image": "/a-practical-approch-in-maintaining-and-reducing-tech-debt-for-enterprise-javascript-typescript/hero.jpeg"
+    },
+    {
       "route": "you-can-animate-page-navigation",
       "title": "You Can Animate Page Navigation",
       "content": "I've built plenty of React apps with client-side routing — click a link, the URL changes, a new component renders. Fast, fine, forgettable. What I didn't realize until recently: that swap doesn't have to feel like a hard cut. Page navigation can be animated with the View Transitions API — the old view sliding out while the new one slides in, a tab underline gliding to its new spot, the whole thing reading like a native app changing screens. The browser takes snapshots of the old and new UI, animates between them, and React can unmount immediately — no AnimatePresence, no delayed unmounts. In practice, you add viewTransition to NavLink, set viewTransitionName on the main outlet, and write a few lines of CSS for ::view-transition-old and ::view-transition-new. React Router's viewTransition prop requires a data router (createBrowserRouter). Directional slides, shared element morphs, and cross-fades become straightforward. It degrades gracefully in unsupported browsers and should respect prefers-reduced-motion. For tabbed layouts, settings panels, and onboarding flows, this is the first thing to try before reaching for a full animation library.",

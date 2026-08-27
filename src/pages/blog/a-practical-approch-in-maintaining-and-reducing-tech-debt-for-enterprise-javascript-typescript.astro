@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { PracticalApprochMaintainingReducingTechDebt as PracticalApprochMaintainingReducingTechDebtPage } from "../../components/pages/blogs/a-practical-approch-in-maintaining-and-reducing-tech-debt-for-enterprise-javascript-typescript";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="a-practical-approch-in-maintaining-and-reducing-tech-debt-for-enterprise-javascript-typescript" />
+  <PracticalApprochMaintainingReducingTechDebtPage client:only="react" />
+</Layout>
