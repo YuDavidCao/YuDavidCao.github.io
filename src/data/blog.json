@@ -1,6 +1,22 @@
 {
   "blogs": [
     {
+      "route": "keeping-frontend-and-backend-types-in-sync-with-typescript-magic",
+      "title": "Keeping Frontend and Backend Types in Sync with Typescript Magic",
+      "content": "Every full-stack TypeScript app has a seam where types stop being checked — a NestJS backend with Prisma on one side, a React app with hand-written types.ts on the other, JSON in between. Two TopicRows with the same name but no relationship can drift silently: delete a field from a Prisma select and both packages still compile while the frontend renders undefined forever. The usual fixes (OpenAPI client generation, shared types packages) are real but are migrations. This article describes a lighter approach: keep hand-written interfaces and add compile-time assertions pinning each one to the service method that produces it. About sixty lines of type-level code in backend/contract/assert.ts provide Jsonify (modeling JSON.stringify wire shapes), Equal (invariant type equality via the type-challenges trick), Expect, RowOf, ResultOf, and PagedRowOf. Each endpoint gets one assertion like Equal<RowOf<ReturnType<TopicsService['findAll']>>, TopicRow>. Derive wire types from service method return types, not Prisma selects — services post-process. Wire it up with a tsconfig.contract.json spanning both packages and a check:contract script in CI. When types drift, tsc fails with 'Type false does not satisfy the constraint true' — decompose with P1/P2/Extra/Missing helpers to find the drift. Adopt incrementally, one endpoint at a time. Honest limits: shared interfaces across endpoints need splitting, and interfaces in page components need moving to types.ts. Zero runtime cost, no generated files.",
+      "summary": "Keep hand-written frontend interfaces and pin them to backend service methods with compile-time type assertions — about sixty lines of TypeScript magic that turns silent API drift into a red build, adoptable one endpoint at a time.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/keeping-frontend-and-backend-types-in-sync-with-typescript-magic-99a16b87e27d",
+      "tags": [
+        "TypeScript",
+        "Frontend",
+        "Backend",
+        "Software Engineering",
+        "Technical"
+      ],
+      "date": "2026-09-11T00:00:00-05:00",
+      "image": "/keeping-frontend-and-backend-types-in-sync-with-typescript-magic/hero.png"
+    },
+    {
       "route": "a-practical-approch-in-maintaining-and-reducing-tech-debt-for-enterprise-javascript-typescript",
       "title": "A Practical Approch in Maintaining and Reducing Tech Debt for Enterprise JavaScript/TypeScript Applications",
       "content": "Tech debt is inevitable in large software projects — the real problem is when it accumulates faster than the team can understand or remove it. This article describes a practical maintenance approach for enterprise JavaScript/TypeScript codebases: continuously identify things that can be deleted, automate the easy parts, and use LLMs for architecture-level reasoning. The pipeline starts with Knip for unused files and dependencies (treating it as a candidate generator, not an oracle), feeds Knip output to an LLM for false-positive filtering, and puts Knip in CI with explicit ignore configuration and a 2-week to 3-month grace period for newly unused items. For function-level dead code, combine Knip with TypeScript Language Service reference analysis. For interconnected dead subsystems that reference each other, use scoped LLM audits (e.g. Ponytail's ponytail-audit skill) on architectural domains rather than entire 500k-line repositories. Additional practices include DRY-opportunity prompts, biasing AI agents toward reuse, logical folder structure as LLM optimization, preventing unfinished features from becoming permanent, and Prettier/linting via Husky pre-commit hooks. The key distinction is detection vs. judgment: build a system that says 'these 47 things are suspicious, here is why' — then let humans and LLMs investigate.",
