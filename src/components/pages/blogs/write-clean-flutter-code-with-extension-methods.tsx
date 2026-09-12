@@ -2,6 +2,7 @@ import { InlineCode } from "../../blogs/inline-code";
 import { CodeBlock } from "../../blogs/code-block";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg = "/write-clean-flutter-code-with-extension-methods/hero.png";
 
@@ -25,7 +26,7 @@ export function WriteCleanFlutterCodeWithExtensionMethods() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/write-clean-flutter-code-with-extension-methods"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Write clean Flutter code with extension methods"
           date="June 12, 2024"
@@ -108,7 +109,7 @@ export function WriteCleanFlutterCodeWithExtensionMethods() {
           </p>
           <BlogFooter url="https://medium.com/p/cd1cc9e52a8a" />
         </article>
-      </div>
+      </BlogLayout>
     </>
   );
 }

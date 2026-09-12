@@ -2,6 +2,7 @@ import { InlineCode } from "../../blogs/inline-code";
 import { CodeBlock } from "../../blogs/code-block";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg =
   "/using-github-copilot-cli-in-github-actions-ci/hero.png";
@@ -181,7 +182,7 @@ export function UsingGithubCopilotCliInGithubActionsCi() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/using-github-copilot-cli-in-github-actions-ci"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Using GitHub Copilot CLI in GitHub Actions CI"
           date="July 21, 2026"
@@ -582,7 +583,7 @@ export function UsingGithubCopilotCliInGithubActionsCi() {
           <p className="mb-4">That is where it provides the most value.</p>
         </article>
         <BlogFooter url="https://medium.com/@yu.cao20041208/using-github-copilot-cli-in-github-actions-ci-7875a2385a0d" />
-      </div>
+      </BlogLayout>
     </>
   );
 }

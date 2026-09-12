@@ -2,6 +2,7 @@ import { InlineCode } from "../../blogs/inline-code";
 import { CodeBlock } from "../../blogs/code-block";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg = "/you-can-animate-page-navigation/hero.png";
 
@@ -38,7 +39,7 @@ export function YouCanAnimatePageNavigation() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/you-can-animate-page-navigation"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="You Can Animate Page Navigation"
           date="August 12, 2026"
@@ -276,7 +277,7 @@ export function YouCanAnimatePageNavigation() {
           </p>
         </article>
         <BlogFooter url="https://medium.com/@yu.cao20041208/you-can-animate-page-navigation-ff9cbe9c6d3b" />
-      </div>
+      </BlogLayout>
     </>
   );
 }

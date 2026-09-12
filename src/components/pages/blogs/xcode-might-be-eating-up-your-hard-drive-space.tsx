@@ -1,6 +1,7 @@
 import { InlineCode } from "../../blogs/inline-code";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg = "/xcode-might-be-eating-up-your-hard-drive-space/hero.png";
 const derivedData = "/xcode-might-be-eating-up-your-hard-drive-space/img1.png";
@@ -25,7 +26,7 @@ export function XcodeMightBeEatingUpYourHardDriveSpace() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/xcode-might-be-eating-up-your-hard-drive-space"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Xcode might be eating up your hard drive space!"
           date="July 1, 2025"
@@ -91,7 +92,7 @@ export function XcodeMightBeEatingUpYourHardDriveSpace() {
           </p>
           <BlogFooter url="https://medium.com/p/b7437cc880a5" />
         </article>
-      </div>
+      </BlogLayout>
     </>
   );
 } 

@@ -2,6 +2,7 @@ import { CodeBlock } from "../../blogs/code-block";
 import { InlineCode } from "../../blogs/inline-code";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg =
   "/turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source/hero.jpeg";
@@ -31,7 +32,7 @@ export function TurnYourIphoneIntoARemoteTerminalForYourMacCompletelyFreeAndOpen
         rel="canonical"
         href="https://yudavidcao.github.io/blog/turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Turn Your iPhone into a Remote Terminal for Your Mac — Completely Free and Open Source"
           date="July 11, 2026"
@@ -241,7 +242,7 @@ fi`}
           </p>
           <BlogFooter url="https://medium.com/@yu.cao20041208/turn-your-iphone-into-a-remote-terminal-for-your-mac-completely-free-and-open-source-8a656f45e1be" />
         </article>
-      </div>
+      </BlogLayout>
     </>
   );
 }

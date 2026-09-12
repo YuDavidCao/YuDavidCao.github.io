@@ -2,6 +2,7 @@ import { InlineCode } from "../../blogs/inline-code";
 import { CodeBlock } from "../../blogs/code-block";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg =
   "/flutter-app-store-publishing-common-pitfalls-part-1/hero.png";
@@ -26,7 +27,7 @@ export function FlutterAppStorePublishingCommonPitfallsPart1() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/flutter-app-store-publishing-common-pitfalls-part-1"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Flutter App Store Publishing: Common Pitfalls (Part 1)"
           date="June 28, 2026"
@@ -313,7 +314,7 @@ export function FlutterAppStorePublishingCommonPitfallsPart1() {
           </p>
         </article>
         <BlogFooter url="https://medium.com/@yu.cao20041208/flutter-app-store-publishing-common-pitfalls-part-1-195e2713db2e" />
-      </div>
+      </BlogLayout>
     </>
   );
 }

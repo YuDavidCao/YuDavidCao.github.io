@@ -1,5 +1,6 @@
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg = "/how-to-learn-programming-in-2024/hero.png";
 
@@ -20,7 +21,7 @@ export function HowToLearnProgrammingIn2024() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/how-to-learn-programming-in-2024"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="How to Learn Programming in 2024"
           date="May 25, 2024"
@@ -132,7 +133,7 @@ export function HowToLearnProgrammingIn2024() {
           </p>
           <BlogFooter url="https://medium.com/p/a5b5d5d3edab" />
         </article>
-      </div>
+      </BlogLayout>
     </>
   );
 } 

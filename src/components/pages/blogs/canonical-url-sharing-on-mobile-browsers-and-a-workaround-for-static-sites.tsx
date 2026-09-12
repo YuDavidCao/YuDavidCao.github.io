@@ -2,6 +2,7 @@ import { InlineCode } from "../../blogs/inline-code";
 import { CodeBlock } from "../../blogs/code-block";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg = "/canonical-url-sharing-on-mobile-browsers-and-a-workaround-for-static-sites/hero.png";
 
@@ -28,7 +29,7 @@ export function CanonicalUrlSharingOnMobileBrowsersAndAWorkaroundForStaticSites(
         rel="canonical"
         href="https://yudavidcao.github.io/blog/canonical-url-sharing-on-mobile-browsers-and-a-workaround-for-static-sites"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Canonical URL sharing on mobile browsers and a workaround for static sites"
           date="June 6, 2025"
@@ -113,7 +114,7 @@ export function CanonicalUrlSharingOnMobileBrowsersAndAWorkaroundForStaticSites(
           </p>
           <BlogFooter url="https://medium.com/@yu.cao20041208/canonical-url-sharing-on-mobile-browsers-and-a-workaround-for-static-sites-bab360d29835" />
         </article>
-      </div>
+      </BlogLayout>
     </>
   );
 } 

@@ -2,6 +2,7 @@ import { InlineCode } from "../../blogs/inline-code";
 import { CodeBlock } from "../../blogs/code-block";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg =
   "/keeping-frontend-and-backend-types-in-sync-with-typescript-magic/hero.png";
@@ -121,7 +122,7 @@ export function KeepingFrontendAndBackendTypesInSyncWithTypescriptMagic() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/keeping-frontend-and-backend-types-in-sync-with-typescript-magic"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Keeping Frontend and Backend Types in Sync with Typescript Magic"
           date="September 11, 2026"
@@ -400,7 +401,7 @@ export function KeepingFrontendAndBackendTypesInSyncWithTypescriptMagic() {
           </p>
         </article>
         <BlogFooter url="https://medium.com/@yu.cao20041208/keeping-frontend-and-backend-types-in-sync-with-typescript-magic-99a16b87e27d" />
-      </div>
+      </BlogLayout>
     </>
   );
 }

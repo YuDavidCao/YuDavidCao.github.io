@@ -1,5 +1,6 @@
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg = "/reflections-from-pycon-us-2026/hero.png";
 
@@ -20,7 +21,7 @@ export function ReflectionsFromPyconUs2026() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/reflections-from-pycon-us-2026"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Reflections from PyCon US 2026"
           date="May 20, 2026"
@@ -261,7 +262,7 @@ export function ReflectionsFromPyconUs2026() {
           <p className="mb-4">I'll definitely be at PyCon again next year.</p>
         </article>
         <BlogFooter url="https://medium.com/p/571a2737d98f" />
-      </div>
+      </BlogLayout>
     </>
   );
 }

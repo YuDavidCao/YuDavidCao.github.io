@@ -2,6 +2,7 @@ import { InlineCode } from "../../blogs/inline-code";
 import { CodeBlock } from "../../blogs/code-block";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 const heroImg =
   "/things-that-literally-doubled-my-productivity-as-a-programmer/hero.png";
 const errorLensImg =
@@ -39,7 +40,7 @@ export function ThingsThatLiterallyDoubledMyProductivityAsAProgrammer() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/things-that-literally-doubled-my-productivity-as-a-programmer"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Things that literally doubled my productivity as a programmer"
           date="January 15, 2025"
@@ -272,7 +273,7 @@ export function ThingsThatLiterallyDoubledMyProductivityAsAProgrammer() {
           </p>
           <BlogFooter url="https://medium.com/@yu.cao20041208/things-that-literally-doubled-my-productivity-as-a-programmer-a2806408f46a" />
         </article>
-      </div>
+      </BlogLayout>
     </>
   );
 }

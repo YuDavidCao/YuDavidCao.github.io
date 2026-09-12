@@ -2,6 +2,7 @@ import { InlineCode } from "../../blogs/inline-code";
 import { CodeBlock } from "../../blogs/code-block";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg = "/network-request-override-with-chrome-devtools/hero.png";
 const networkTabImg = "/network-request-override-with-chrome-devtools/img1.png";
@@ -36,7 +37,7 @@ export function NetworkRequestOverrideWithChromeDevtools() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/network-request-override-with-chrome-devtools"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Network Request Override with Chrome DevTools"
           date="July 7, 2026"
@@ -395,7 +396,7 @@ export function NetworkRequestOverrideWithChromeDevtools() {
           </p>
         </article>
         <BlogFooter url="https://medium.com/p/4fad776fc2ca" />
-      </div>
+      </BlogLayout>
     </>
   );
 }

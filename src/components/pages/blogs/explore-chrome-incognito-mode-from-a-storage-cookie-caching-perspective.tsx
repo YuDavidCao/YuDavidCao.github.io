@@ -1,6 +1,7 @@
 import { InlineCode } from "../../blogs/inline-code";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg =
   "/explore-chrome-incognito-mode-from-a-storage-cookie-caching-perspective/hero.png";
@@ -30,7 +31,7 @@ export function ExploreChromeIncognitoModeFromAStorageCookieCachingPerspective()
         rel="canonical"
         href="https://yudavidcao.github.io/blog/explore-chrome-incognito-mode-from-a-storage-cookie-caching-perspective"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Explore Chrome Incognito Mode from a storage & cookie & caching perspective"
           date="July 23, 2026"
@@ -215,7 +216,7 @@ export function ExploreChromeIncognitoModeFromAStorageCookieCachingPerspective()
           </p>
         </article>
         <BlogFooter url="https://medium.com/@yu.cao20041208/explore-chrome-incognito-mode-from-a-storage-cookie-caching-perspective-19ba0941e216" />
-      </div>
+      </BlogLayout>
     </>
   );
 }

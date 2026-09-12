@@ -1,5 +1,6 @@
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg =
   "/common-problems-with-vibe-coding-and-how-to-avoid-them/hero.png";
@@ -24,7 +25,7 @@ export function CommonProblemsWithVibeCoding() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/common-problems-with-vibe-coding-and-how-to-avoid-them"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Common Problems with Vibe Coding (and How to Avoid Them)"
           date="June 6, 2026"
@@ -182,7 +183,7 @@ export function CommonProblemsWithVibeCoding() {
           </p>
         </article>
         <BlogFooter url="https://medium.com/@yu.cao20041208/common-problems-with-vibe-coding-and-how-to-avoid-them-a7e93cc5ead9" />
-      </div>
+      </BlogLayout>
     </>
   );
 }

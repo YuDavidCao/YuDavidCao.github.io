@@ -2,6 +2,7 @@ import { InlineCode } from "../../blogs/inline-code";
 import { CodeBlock } from "../../blogs/code-block";
 import { BlogFooter } from "../../blogs/blog-footer";
 import { BlogHeader } from "../../blogs/BlogHeader";
+import { BlogLayout } from "../../blogs/BlogLayout";
 
 const heroImg =
   "/using-the-broadcastchannel-api-for-cross-tab-communication/hero.png";
@@ -26,7 +27,7 @@ export function UsingTheBroadcastChannelApiForCrossTabCommunication() {
         rel="canonical"
         href="https://yudavidcao.github.io/blog/using-the-broadcastchannel-api-for-cross-tab-communication"
       />
-      <div className="w-3/5 flex gap-4 text-xl rounded-lg py-4 flex-col font-sans dark:bg-dark-primary dark:text-dark-tx-primary">
+      <BlogLayout>
         <BlogHeader
           title="Using the BroadcastChannel API for Cross-Tab Communication"
           date="June 11, 2026"
@@ -207,7 +208,7 @@ export function UsingTheBroadcastChannelApiForCrossTabCommunication() {
           </p>
           <BlogFooter url="https://medium.com/p/d048c1107dd3" />
         </article>
-      </div>
+      </BlogLayout>
     </>
   );
 }
