@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { WhyYouShouldKeepDocumentationMinimalWhenWorkingWithCodingAgents as WhyYouShouldKeepDocumentationMinimalWhenWorkingWithCodingAgentsPage } from "../../components/pages/blogs/why-you-should-keep-documentation-minimal-when-working-with-coding-agents";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="why-you-should-keep-documentation-minimal-when-working-with-coding-agents" />
+  <WhyYouShouldKeepDocumentationMinimalWhenWorkingWithCodingAgentsPage client:only="react" />
+</Layout>

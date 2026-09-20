@@ -1,6 +1,20 @@
 {
   "blogs": [
     {
+      "route": "why-you-should-keep-documentation-minimal-when-working-with-coding-agents",
+      "title": "Why You Should Keep Documentation Minimal When Working with Coding Agents",
+      "content": "When coding agents change implementation but leave stale comments and docs behind, the next task may start from misleading explanations. A README that still describes local-storage filters after persistence moved to URL parameters can send an agent down the wrong path. The same drift appears in inline comments that contradict types and control flow. More documentation does not fix contradictory context; it increases maintenance surface. Prefer making behavior readable in code through names, types, and focused tests that tooling and CI exercise. Keep prose for constraints and decisions readers cannot infer — non-obvious retry rules, external API limitations, architectural intent. Minimize standalone doc files; put explanations beside the code they describe so diffs surface mismatches. Use a small agent.md for durable rules and explicit reminders to search and update related comments when behavior changes, with task-scoped prompts for high-impact refactors. Before adding another comment, ask what it teaches and what will trigger updating it when it stops being true.",
+      "summary": "Coding agents can ship code changes while leaving stale docs that mislead the next session. Keep behavior in names, types, and tests; reserve prose for non-inferable constraints; keep docs minimal and close to code; and remind agents to finish documentation updates with the change.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/why-you-should-keep-documentation-minimal-when-working-with-coding-agents-030488ecadfa",
+      "tags": [
+        "AI",
+        "Software Engineering",
+        "Non-technical"
+      ],
+      "date": "2026-09-20T00:00:00-05:00",
+      "image": "/why-you-should-keep-documentation-minimal-when-working-with-coding-agents/hero.png"
+    },
+    {
       "route": "keeping-frontend-and-backend-types-in-sync-with-typescript-magic",
       "title": "Keeping Frontend and Backend Types in Sync with Typescript Magic",
       "content": "Every full-stack TypeScript app has a seam where types stop being checked — a NestJS backend with Prisma on one side, a React app with hand-written types.ts on the other, JSON in between. Two TopicRows with the same name but no relationship can drift silently: delete a field from a Prisma select and both packages still compile while the frontend renders undefined forever. The usual fixes (OpenAPI client generation, shared types packages) are real but are migrations. This article describes a lighter approach: keep hand-written interfaces and add compile-time assertions pinning each one to the service method that produces it. About sixty lines of type-level code in backend/contract/assert.ts provide Jsonify (modeling JSON.stringify wire shapes), Equal (invariant type equality via the type-challenges trick), Expect, RowOf, ResultOf, and PagedRowOf. Each endpoint gets one assertion like Equal<RowOf<ReturnType<TopicsService['findAll']>>, TopicRow>. Derive wire types from service method return types, not Prisma selects — services post-process. Wire it up with a tsconfig.contract.json spanning both packages and a check:contract script in CI. When types drift, tsc fails with 'Type false does not satisfy the constraint true' — decompose with P1/P2/Extra/Missing helpers to find the drift. Adopt incrementally, one endpoint at a time. Honest limits: shared interfaces across endpoints need splitting, and interfaces in page components need moving to types.ts. Zero runtime cost, no generated files.",
