@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "route": "artificial-latency-ai-agents-and-the-ux-we-keep-forgetting",
+      "title": "Artificial Latency, AI Agents, and the UX We Keep Forgetting",
+      "content": "As AI makes building software cheaper, designing the experience matters more. Artificial latency — intentionally delaying a result even when computation could finish sooner — can make complex, personalized results like an AI travel itinerary feel considered rather than generic, but only for high-stakes reasoning tasks, never for quick actions like checking the weather, and it should be tested because reassurance for one user can feel manipulative to another. If users must wait, make the wait meaningful: replace generic spinners with specific, progressive loader messages, but show results as soon as they are ready and don't imply fake completed stages. AI can generate a polished dashboard, yet miss the primary action, empty states, error recovery, and mobile ergonomics, because AI development optimizes for what is easy to verify. A dedicated UX agent could exercise the app in a browser alongside the coding agent, probe workflows, invalid forms, and error states, suggest improvements and retest — complementing, not replacing, real usability testing. Building software is getting cheaper; making it worth using is still hard.",
+      "summary": "Faster isn't always better: artificial latency and meaningful loaders can build user confidence, and a dedicated UX agent can catch what AI-generated interfaces miss. Building software is getting cheaper — making it worth using is still hard.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/artificial-latency-ai-agents-and-the-ux-we-keep-forgetting-6484e57558c1",
+      "tags": [
+        "AI",
+        "UX",
+        "Frontend",
+        "Non-technical"
+      ],
+      "date": "2026-10-09T00:00:00-05:00",
+      "image": "/artificial-latency-ai-agents-and-the-ux-we-keep-forgetting/hero.png"
+    },
+    {
       "route": "why-you-should-keep-documentation-minimal-when-working-with-coding-agents",
       "title": "Why You Should Keep Documentation Minimal When Working with Coding Agents",
       "content": "When coding agents change implementation but leave stale comments and docs behind, the next task may start from misleading explanations. A README that still describes local-storage filters after persistence moved to URL parameters can send an agent down the wrong path. The same drift appears in inline comments that contradict types and control flow. More documentation does not fix contradictory context; it increases maintenance surface. Prefer making behavior readable in code through names, types, and focused tests that tooling and CI exercise. Keep prose for constraints and decisions readers cannot infer — non-obvious retry rules, external API limitations, architectural intent. Minimize standalone doc files; put explanations beside the code they describe so diffs surface mismatches. Use a small agent.md for durable rules and explicit reminders to search and update related comments when behavior changes, with task-scoped prompts for high-impact refactors. Before adding another comment, ask what it teaches and what will trigger updating it when it stops being true.",
