@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaCheck, FaRegClipboard } from "react-icons/fa6";
 
 function displayUrl(url: string): string {
@@ -7,8 +7,8 @@ function displayUrl(url: string): string {
 
 export function CopyShortLink() {
   const [shortUrl, setShortUrl] = useState<string | null>(null);
-  const [copied, setCopied] = useState(false);
-  const [failed, setFailed] = useState(false);
+  const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
+  const resetTimer = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const href = document.querySelector<HTMLLinkElement>(
@@ -22,17 +22,20 @@ export function CopyShortLink() {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(shortUrl);
-      setFailed(false);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 1600);
+      setStatus("copied");
     } catch {
-      setCopied(false);
-      setFailed(true);
-      window.setTimeout(() => setFailed(false), 1600);
+      setStatus("failed");
     }
+    window.clearTimeout(resetTimer.current);
+    resetTimer.current = window.setTimeout(() => setStatus("idle"), 1600);
   };
 
-  const label = copied ? "Copied" : failed ? "Copy failed" : "Copy short link";
+  const label =
+    status === "copied"
+      ? "Copied"
+      : status === "failed"
+        ? "Copy failed"
+        : "Copy short link";
 
   return (
     <button
@@ -41,7 +44,7 @@ export function CopyShortLink() {
       className="mt-1 inline-flex items-center gap-2 not-italic font-mono text-xs tracking-wide border border-current/25 rounded-sm px-2.5 py-1 hover:border-current/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
       aria-label={`${label}: ${shortUrl}`}
     >
-      {copied ? <FaCheck aria-hidden="true" /> : <FaRegClipboard aria-hidden="true" />}
+      {status === "copied" ? <FaCheck aria-hidden="true" /> : <FaRegClipboard aria-hidden="true" />}
       <span>{label}</span>
       <span className="opacity-70">{displayUrl(shortUrl)}</span>
     </button>

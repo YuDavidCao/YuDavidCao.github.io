@@ -154,7 +154,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
-.card-vintage:hover {
+.card-vintage:hover,
+[data-blog-card]:hover > .card-vintage {
   box-shadow: 0 8px 24px rgba(44, 36, 22, 0.12);
   transform: translateY(-2px);
 }
@@ -165,7 +166,8 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.dark .card-vintage:hover {
+.dark .card-vintage:hover,
+.dark [data-blog-card]:hover > .card-vintage {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 

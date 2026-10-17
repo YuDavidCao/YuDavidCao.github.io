@@ -172,17 +172,12 @@ const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]);
     document
       .querySelectorAll<HTMLButtonElement>("[data-short-url]")
       .forEach((button) => {
-        if (button.dataset.copyBound === "true") return;
-        button.dataset.copyBound = "true";
-
         const label = button.querySelector("[data-copy-label]");
         const original = label?.textContent ?? "Copy short link";
         const idleLabel = button.getAttribute("aria-label") ?? original;
+        let resetTimer: number | undefined;
 
-        button.addEventListener("click", async (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-
+        button.addEventListener("click", async () => {
           const url = button.dataset.shortUrl;
           if (!url || !label) return;
 
@@ -195,7 +190,8 @@ const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]);
             button.setAttribute("aria-label", "Copy failed");
           }
 
-          window.setTimeout(() => {
+          window.clearTimeout(resetTimer);
+          resetTimer = window.setTimeout(() => {
             label.textContent = original;
             button.setAttribute("aria-label", idleLabel);
           }, 1600);
