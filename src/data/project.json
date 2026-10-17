@@ -64,6 +64,86 @@
           "url": "https://github.com/YuDavidCao/clipboard_history"
         }
       ]
+    },
+    {
+      "title": "Available Date Formatter",
+      "description": "Drag across a week grid to mark when you're free or busy, then copy it as text, an image, a share link, or an .ics file. Everything runs in the browser — availability lives in the URL hash, so nothing is uploaded.",
+      "image": "/available-date-formatter.png",
+      "tags": [
+        "Astro",
+        "React",
+        "Typescript",
+        "Web"
+      ],
+      "actions": [
+        {
+          "label": "View Website",
+          "url": "https://available-date-formatter.com/"
+        },
+        {
+          "label": "View Source",
+          "url": "https://github.com/YuDavidCao/available-date-formatter"
+        }
+      ]
+    },
+    {
+      "title": "GitHub Pie Chart",
+      "description": "A pie chart of anyone's GitHub contributions grouped by repo, served as an SVG you can embed in a README. No build step and no dependencies — one serverless function, plus a live configurator that builds the snippet for you.",
+      "image": "/github-piechart.png",
+      "tags": [
+        "JavaScript",
+        "Serverless",
+        "SVG",
+        "Web"
+      ],
+      "actions": [
+        {
+          "label": "View Website",
+          "url": "https://github-piechart.vercel.app/"
+        },
+        {
+          "label": "View Source",
+          "url": "https://github.com/YuDavidCao/github-piechart"
+        }
+      ]
+    },
+    {
+      "title": "RSVP Reader",
+      "description": "A minimalist speed reader that flashes words one at a time using Rapid Serial Visual Presentation, aligning each word on its Optimal Recognition Point so your eyes stay still. Adjustable from 100 to 800 WPM, with a fullscreen focus mode and keyboard shortcuts.",
+      "image": "/rsvp-reader.png",
+      "tags": [
+        "React",
+        "Typescript",
+        "Vite",
+        "Tailwind"
+      ],
+      "actions": [
+        {
+          "label": "View Website",
+          "url": "https://yudavidcao.github.io/RSVP-Reader/"
+        },
+        {
+          "label": "View Source",
+          "url": "https://github.com/YuDavidCao/RSVP-Reader"
+        }
+      ]
+    },
+    {
+      "title": "Kaomoji Keyboard",
+      "description": "An iOS custom keyboard for browsing, searching, and inserting 800+ Japanese-style text emoticons anywhere you type, with mood categories, keyword search, and usage-based sorting. It never requests Full Access and makes no network calls.",
+      "image": "/kaomoji-keyboard.png",
+      "tags": [
+        "Swift",
+        "UIKit",
+        "SwiftUI",
+        "IOS"
+      ],
+      "actions": [
+        {
+          "label": "View Source",
+          "url": "https://github.com/YuDavidCao/kaomoji-keyboard"
+        }
+      ]
     }
   ]
 }
