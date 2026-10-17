@@ -1,4 +1,5 @@
 export interface Blog {
+  id: number;
   route: string;
   title: string;
   summary: string;

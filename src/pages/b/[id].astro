@@ -1,0 +1,43 @@
+---
+import blogData from "../../data/blog.json";
+import { absoluteUrl } from "../../config/site";
+
+export function getStaticPaths() {
+  const seen = new Set<number>();
+
+  return blogData.blogs.map((blog) => {
+    if (seen.has(blog.id)) {
+      throw new Error(`Duplicate blog id: ${blog.id}`);
+    }
+    seen.add(blog.id);
+
+    return {
+      params: { id: String(blog.id) },
+      props: { route: blog.route },
+    };
+  });
+}
+
+const { route } = Astro.props;
+const destination = `/blog/${route}`;
+const canonical = absoluteUrl(destination);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <script is:inline define:vars={{ destination }}>
+      location.replace(destination);
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href={destination}>Continue to the article</a>
+    </p>
+  </body>
+</html>

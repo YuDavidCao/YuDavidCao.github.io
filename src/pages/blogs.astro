@@ -169,6 +169,39 @@ const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]);
       applyFilter();
     });
 
+    document
+      .querySelectorAll<HTMLButtonElement>("[data-short-url]")
+      .forEach((button) => {
+        if (button.dataset.copyBound === "true") return;
+        button.dataset.copyBound = "true";
+
+        const label = button.querySelector("[data-copy-label]");
+        const original = label?.textContent ?? "Copy short link";
+        const idleLabel = button.getAttribute("aria-label") ?? original;
+
+        button.addEventListener("click", async (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const url = button.dataset.shortUrl;
+          if (!url || !label) return;
+
+          try {
+            await navigator.clipboard.writeText(url);
+            label.textContent = "Copied";
+            button.setAttribute("aria-label", "Copied short link");
+          } catch {
+            label.textContent = "Copy failed";
+            button.setAttribute("aria-label", "Copy failed");
+          }
+
+          window.setTimeout(() => {
+            label.textContent = original;
+            button.setAttribute("aria-label", idleLabel);
+          }, 1600);
+        });
+      });
+
     tagButtons.forEach((button) => {
       const tag = button.dataset.tagFilter;
       if (!tag) return;

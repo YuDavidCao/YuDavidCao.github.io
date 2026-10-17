@@ -1,3 +1,5 @@
+import { CopyShortLink } from "./CopyShortLink";
+
 export function BlogHeader({
   title,
   date,
@@ -16,6 +18,7 @@ export function BlogHeader({
       </h1>
       <div className="flex flex-col items-center text-tx-secondary text-base mb-4 font-light italic dark:text-tx-tertiary">
         <span>{date}</span>
+        <CopyShortLink />
       </div>
       <img
         src={heroImgSrc}

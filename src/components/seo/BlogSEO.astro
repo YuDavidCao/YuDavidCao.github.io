@@ -1,6 +1,8 @@
 ---
 import SiteSEO from "./SiteSEO.astro";
 import blogData from "../../data/blog.json";
+import { absoluteUrl } from "../../config/site";
+import { shortBlogPath } from "../../lib/blog-short-url";
 
 interface Props {
   route: string;
@@ -12,8 +14,15 @@ const blog = blogData.blogs.find((entry) => entry.route === route);
 if (!blog) {
   throw new Error(`Blog not found for route: ${route}`);
 }
+
+if (typeof blog.id !== "number") {
+  throw new Error(`Blog is missing a numeric id: ${route}`);
+}
+
+const shortUrl = absoluteUrl(shortBlogPath(blog.id));
 ---
 
+<link rel="shortlink" href={shortUrl} />
 <SiteSEO
   title={blog.title}
   description={blog.summary}
