@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { FiveSmallClaudeCodeModsThatChangedHowIWorkWithAiAgents as FiveSmallClaudeCodeModsThatChangedHowIWorkWithAiAgentsPage } from "../../components/pages/blogs/five-small-claude-code-mods-that-changed-how-i-work-with-ai-agents";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="five-small-claude-code-mods-that-changed-how-i-work-with-ai-agents" />
+  <FiveSmallClaudeCodeModsThatChangedHowIWorkWithAiAgentsPage client:only="react" />
+</Layout>
