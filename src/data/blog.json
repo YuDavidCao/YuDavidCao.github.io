@@ -1,6 +1,22 @@
 {
   "blogs": [
     {
+      "id": 24,
+      "route": "five-small-claude-code-mods-that-changed-how-i-work-with-ai-agents",
+      "title": "Five Small Claude Code Mods That Changed How I Work With AI Agents",
+      "content": "Five small Claude Code mods, each adding one band row above the prompt box, composed by calling next(e) in the AbovePrompt ui.render hook so none replaces the others. Finish and decision alerts: a Stop hook shows a macOS notification and speaks via osascript and say when a session finishes, and the finish-alert mod adds a popup and voice when Claude asks a question (AskUserQuestion), presents a plan (ExitPlanMode) or needs permission, with the folder name in the message and a flag file to mute alerts from any session. Prompt enhancer: Enhance and Send buttons appear when the box has a draft; Enhance forks the session (or falls back to Sonnet with project context) to rewrite the draft in place, naming installed skills, adding project details, listing decisions to ask about and describing done, without clobbering edits. Detail slider: five levels from Simple to Expert, injected into the system prompt via prompt.compose, changing depth and vocabulary only, never correctness. Assumptions tracker: after each turn that edited files, Haiku audits the transcript for assumptions the user never specified; mark each Right or Wrong and Wrong sends a targeted fix prompt that keeps the right ones. Context window bar: a ten-cell bar with percent and tokens that warns past a threshold and offers a handoff to a fresh session with a forked brief (goal, current state, decisions, files touched, next steps) or a plain clear, plus /handoff and /autohandoff. Lessons: one problem one mod, cheapest model for side jobs, never overwrite the human, keep pure logic separate and tested, put features where they are relevant.",
+      "summary": "Popup and voice alerts, a one-click prompt enhancer, a detail slider, an assumptions tracker, and a context window bar: five small Claude Code mods, each a single row above the prompt box, that keep the human in the loop at the right moments.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/five-small-claude-code-mods-that-changed-how-i-work-with-ai-agents-e6c7059a5d61",
+      "tags": [
+        "AI",
+        "Claude Code",
+        "Software Engineering",
+        "Technical"
+      ],
+      "date": "2026-11-06T00:00:00-05:00",
+      "image": "/five-small-claude-code-mods-that-changed-how-i-work-with-ai-agents/hero.png"
+    },
+    {
       "id": 23,
       "route": "artificial-latency-ai-agents-and-the-ux-we-keep-forgetting",
       "title": "Artificial Latency, AI Agents, and the UX We Keep Forgetting",
