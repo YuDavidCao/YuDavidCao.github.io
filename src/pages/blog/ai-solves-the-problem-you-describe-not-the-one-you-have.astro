@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { AiSolvesTheProblemYouDescribeNotTheOneYouHave as AiSolvesTheProblemYouDescribeNotTheOneYouHavePage } from "../../components/pages/blogs/ai-solves-the-problem-you-describe-not-the-one-you-have";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="ai-solves-the-problem-you-describe-not-the-one-you-have" />
+  <AiSolvesTheProblemYouDescribeNotTheOneYouHavePage client:only="react" />
+</Layout>

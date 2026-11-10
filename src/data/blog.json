@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "id": 25,
+      "route": "ai-solves-the-problem-you-describe-not-the-one-you-have",
+      "title": "AI Solves the Problem You Describe, Not the One You Have",
+      "content": "AI builds exactly what you ask for, so the input decides the outcome. The XY problem with AI: asking for Y (a cron job that clears the Redis cache) instead of describing X (users see stale prices) gets a well-built Y that never solves X; give X first, offer Y as a suggestion and ask the model's opinion. The operator is the context bottleneck: humans hold unwritten context from meetings, past failures and customers that the model never sees. Be objective and avoid leading prompts, since models tend to agree. Be comprehensive: list decision factors such as functional requirements, performance, cost, maintenance, UI and UX, dependents, deadlines and risk. When unsure what matters, ask the model what it needs to know first. Say what you cannot share so the model knows its assumptions, then review the output. Be concise: complete on decision factors, brief in each. Faster implementation leaves less time for misunderstandings to surface, so requirements gathering becomes the core of software engineering.",
+      "summary": "Your AI built exactly what you asked for. Here's how to give it context that's objective, complete and concise so it solves the real problem.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/ai-solves-the-problem-you-describe-not-the-one-you-have-e2cb52ac9056",
+      "tags": [
+        "AI",
+        "Software Engineering",
+        "Non-technical"
+      ],
+      "date": "2026-11-09T00:00:00-05:00",
+      "image": "/ai-solves-the-problem-you-describe-not-the-one-you-have/hero.png"
+    },
+    {
       "id": 24,
       "route": "five-small-claude-code-mods-that-changed-how-i-work-with-ai-agents",
       "title": "Five Small Claude Code Mods That Changed How I Work With AI Agents",
