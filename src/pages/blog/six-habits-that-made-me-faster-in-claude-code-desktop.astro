@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { SixHabitsThatMadeMeFasterInClaudeCodeDesktop as SixHabitsThatMadeMeFasterInClaudeCodeDesktopPage } from "../../components/pages/blogs/six-habits-that-made-me-faster-in-claude-code-desktop";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="six-habits-that-made-me-faster-in-claude-code-desktop" />
+  <SixHabitsThatMadeMeFasterInClaudeCodeDesktopPage client:only="react" />
+</Layout>

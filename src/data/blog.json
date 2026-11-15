@@ -1,6 +1,22 @@
 {
   "blogs": [
     {
+      "id": 26,
+      "route": "six-habits-that-made-me-faster-in-claude-code-desktop",
+      "title": "Six Habits That Made Me Faster in Claude Code Desktop",
+      "content": "Six habits from weeks of daily use of the Claude desktop app Code tab. Ask Claude to list your previously sent prompts, ranked by how often they repeat, and say which could become a skill; the most common one (commit, optionally push, open a PR and review the commit) became a /ship skill. Use the side chat (Cmd + ;), which already has the session's context, for questions about the main thread's output without interrupting it or forking. Pin a root session per long-running project with the shared context (what the project is, structure, constraints, decisions) and fork each new piece of work from it so the root stays short. Rename forks, since forks from one root all start as the root's name plus (fork), so parallel sessions are easy to tell apart. Learn the hotkeys: Cmd + N new session, Cmd + ; side chat, Cmd + K command palette, Cmd + B sidebar, Cmd + Shift + T reopen a closed session, Cmd + / list of shortcuts. Use mods and keep looking for what you do by hand three or more times a day that a mod or skill could take over.",
+      "summary": "Six habits from daily Claude Code Desktop use: repeated prompts as skills, side chats, forking a pinned root chat, naming chats, hotkeys and mods.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/six-habits-that-made-me-faster-in-claude-code-desktop-cbcada154a80",
+      "tags": [
+        "AI",
+        "Claude Code",
+        "Productivity",
+        "Technical"
+      ],
+      "date": "2026-11-14T00:00:00-05:00",
+      "image": "/six-habits-that-made-me-faster-in-claude-code-desktop/hero.png"
+    },
+    {
       "id": 25,
       "route": "ai-solves-the-problem-you-describe-not-the-one-you-have",
       "title": "AI Solves the Problem You Describe, Not the One You Have",
