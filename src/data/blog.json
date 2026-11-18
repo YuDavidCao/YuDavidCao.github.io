@@ -1,6 +1,36 @@
 {
   "blogs": [
     {
+      "id": 28,
+      "route": "the-dreaded-chain-of-requirements",
+      "title": "The Dreaded Chain of Requirements",
+      "content": "With AI writing more of the code, the requirement decides the outcome, so the accuracy of the original request matters more than ever. AI-generated requirements are often forwarded without the prompt that produced them, which causes three problems. First, the real need is hard to find, because AI plans are long and give every section the same weight. Second, they are often wrong while sounding right: a non-technical request to ensure low latency on an order history page leads the AI to suggest Redis caching and a CDN, while an engineer who knows the system would point to a costly cross-shard query, since orders are sharded by merchant but the page looks them up by customer. Third, errors compound when the requirement passes through several people who each paste it into AI, like a game of telephone; an experiment turned a 29-word request into about 50 tickets with roughly 100 requirements nobody asked for. What to do: send the original prompt with the doc, label it as AI-drafted and unreviewed, describe the problem rather than the solution if you are not technical, and ask for the source when you receive one. Don't punch above your weight: a two-sentence request that's right beats a two-thousand-word plan that isn't.",
+      "summary": "AI specs forwarded without the original request look thorough and sound right, but drift further from the real need at every hand-off.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/the-dreaded-chain-of-requirements-6a1892af8754",
+      "tags": [
+        "AI",
+        "Software Engineering",
+        "Non-technical"
+      ],
+      "date": "2026-11-17T00:00:00-05:00",
+      "image": "/the-dreaded-chain-of-requirements/hero.png"
+    },
+    {
+      "id": 27,
+      "route": "i-played-telephone-with-ai-generated-requirements",
+      "title": "I Played Telephone With AI-Generated Requirements",
+      "content": "An experiment on what happens when AI-generated requirements are forwarded without the original request. A 29-word request for a real-time sales dashboard for 40 retail stores, needed for a Monday morning meeting, was passed through three rounds of AI in fresh chats: a technical implementation doc for the backend team, a detailed technical design, then tickets with acceptance criteria. Chain A forwarded only the previous output; Chain B carried the original request along at each hop; a control added two sentences of engineering context (sales data arrives as a nightly CSV from the point-of-sale vendor, no live API, a two-person team). Over five runs with Claude Sonnet 5.5, Chain A grew to about 50 tickets with about 98 invented requirements, all built on a guess that sales data could be pulled live, and open questions hardened into decided tickets. Chain B ended with about 23 tickets and 42 invented requirements, and its second hop reviewed the doc against the request instead of expanding it. Only the control designed the right thing, a nightly batch job. No hop ever stopped to ask a question. The scripts and raw results are in the requirements-telephone repo on GitHub.",
+      "summary": "I passed a 29-word request through three rounds of AI and got 50 tickets built on a guess. Sending the original cut the drift in half.",
+      "readMoreUrl": "https://medium.com/@yu.cao20041208/i-played-telephone-with-ai-generated-requirements-11d98fca349d",
+      "tags": [
+        "AI",
+        "Software Engineering",
+        "Non-technical"
+      ],
+      "date": "2026-11-17T00:00:00-05:00",
+      "image": "/i-played-telephone-with-ai-generated-requirements/hero.png"
+    },
+    {
       "id": 26,
       "route": "six-habits-that-made-me-faster-in-claude-code-desktop",
       "title": "Six Habits That Made Me Faster in Claude Code Desktop",

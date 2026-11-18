@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { IPlayedTelephoneWithAiGeneratedRequirements as IPlayedTelephoneWithAiGeneratedRequirementsPage } from "../../components/pages/blogs/i-played-telephone-with-ai-generated-requirements";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="i-played-telephone-with-ai-generated-requirements" />
+  <IPlayedTelephoneWithAiGeneratedRequirementsPage client:only="react" />
+</Layout>

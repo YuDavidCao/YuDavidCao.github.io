@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { TheDreadedChainOfRequirements as TheDreadedChainOfRequirementsPage } from "../../components/pages/blogs/the-dreaded-chain-of-requirements";
+import BlogSEO from "../../components/seo/BlogSEO.astro";
+---
+
+<Layout>
+  <BlogSEO slot="head" route="the-dreaded-chain-of-requirements" />
+  <TheDreadedChainOfRequirementsPage client:only="react" />
+</Layout>
