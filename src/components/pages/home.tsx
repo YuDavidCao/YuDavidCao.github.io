@@ -47,7 +47,7 @@ export function HomePage() {
 
         <FadeIn direction="up" delay={0.2}>
           <p className="text-ink-muted dark:text-dark-ink-muted text-sm uppercase tracking-[0.2em] mb-4 font-mono">
-            Software Developer
+            Software Engineer
           </p>
         </FadeIn>
 
@@ -65,8 +65,9 @@ export function HomePage() {
 
         <FadeIn direction="up" delay={0.5}>
           <p className="text-lg text-ink-light dark:text-dark-ink-light leading-relaxed mb-8 font-body">
-            A second year Computer Science student at the University of Virginia,
-            passionate about crafting elegant software solutions.
+            A Computer Science student at the University of Virginia, graduating
+            December 2027. Previously a software engineer intern at Transcarent,
+            now building production web apps as a freelancer.
           </p>
         </FadeIn>
 
@@ -82,9 +83,10 @@ export function HomePage() {
                 "TypeScript",
                 "Flutter",
                 "Next.js",
+                "Python",
                 "Django",
+                "PostgreSQL",
                 "TailwindCSS",
-                "Prisma",
               ].map((tech) => (
                 <span key={tech} className="tag-vintage">
                   {tech}
@@ -96,7 +98,7 @@ export function HomePage() {
 
         <FadeIn direction="up" delay={0.7}>
           <p className="text-ink-faded dark:text-dark-ink-faded mb-10 italic font-body">
-            Also experienced with Python, Flask, Firebase, AWS, Supabase, MongoDB, TensorFlow, Docker, and Figma.
+            Also experienced with Flask, Firebase, Supabase, AWS, MongoDB, Stripe, Docker, and Figma.
           </p>
         </FadeIn>
 
