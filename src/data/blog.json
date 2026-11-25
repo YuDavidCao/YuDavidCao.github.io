@@ -1,6 +1,21 @@
 {
   "blogs": [
     {
+      "id": 29,
+      "route": "known-unknowns-got-cheap-unknown-unknowns-didnt",
+      "title": "Known Unknowns Got Cheap. Unknown Unknowns Didn't.",
+      "content": "AI redefined known knowns, known unknowns and unknown unknowns. Using anything new used to mean knowing what it is, what it does, how and why it works, and then how to implement it, and the last step took years. AI now handles most of the implementation and explains the how and why on the spot, so what matters is knowing what exists. Known knowns are things you can act on without asking; known unknowns are one prompt away; unknown unknowns are invisible because you never ask. A client website built by prompting works but has no monitoring unless you knew to ask for it. Asking AI what's missing gives a generic list you can't judge, and Anthropic's blind spot pass only helps if you think to run it and only covers the task you framed; it will never bring up a tax deduction while you ask about a website. Known unknowns are cheap, not free: there are dozens per project and hundreds in life, and a known unknown you forget to ask about at the right moment is effectively an unknown unknown. Depth is a time-saving decision: go deep where you run into something often or where a wrong answer is expensive, and you also need the context to check an answer. Unknown unknowns don't appear on that map at all. To shrink them, build breadth: read postmortems and checklists, study mature projects, skim changelogs, talk to people ahead of you, ask AI about your whole situation, and keep a list of things you've heard of but don't understand.",
+      "summary": "AI made known unknowns cheap to answer. Unknown unknowns still cost you, because you can't prompt for something you don't know exists.",
+      "readMoreUrl": "",
+      "tags": [
+        "AI",
+        "Productivity",
+        "Non-technical"
+      ],
+      "date": "2026-11-24T00:00:00-05:00",
+      "image": "/known-unknowns-got-cheap-unknown-unknowns-didnt/hero.png"
+    },
+    {
       "id": 28,
       "route": "the-dreaded-chain-of-requirements",
       "title": "The Dreaded Chain of Requirements",
